@@ -58,8 +58,7 @@ struct Home: View {
                 .background(LinearGradient(gradient: .init(colors: [Color("Color1"), Color("Color3")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
                 .edgesIgnoringSafeArea(.bottom)
                 
-            CustumTapBar()
-
+\
                 }
                 
             }
