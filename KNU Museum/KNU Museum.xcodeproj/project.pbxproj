@@ -13,6 +13,10 @@
 		177E2B832828C7170088B3CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E2B712828C7160088B3CB /* ContentView.swift */; };
 		177E2B842828C7170088B3CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177E2B722828C7170088B3CB /* Assets.xcassets */; };
 		177E2B852828C7170088B3CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177E2B722828C7170088B3CB /* Assets.xcassets */; };
+		CBAC4F5A282AB345005C0A82 /* TapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAC4F59282AB345005C0A82 /* TapModel.swift */; };
+		CBAC4F5B282AB345005C0A82 /* TapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAC4F59282AB345005C0A82 /* TapModel.swift */; };
+		CBCF77AB282A866300ADA3BA /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCF77AA282A866200ADA3BA /* CustomTabBar.swift */; };
+		CBCF77AC282A866300ADA3BA /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCF77AA282A866200ADA3BA /* CustomTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,8 @@
 		177E2B772828C7170088B3CB /* KNU Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KNU Museum.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177E2B7D2828C7170088B3CB /* KNU Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KNU Museum.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177E2B7F2828C7170088B3CB /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		CBAC4F59282AB345005C0A82 /* TapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapModel.swift; sourceTree = "<group>"; };
+		CBCF77AA282A866200ADA3BA /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTabBar.swift; path = ../../../../../Applications/CustomTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 			children = (
 				177E2B702828C7160088B3CB /* KNU_MuseumApp.swift */,
 				177E2B712828C7160088B3CB /* ContentView.swift */,
+				CBAC4F59282AB345005C0A82 /* TapModel.swift */,
+				CBCF77AA282A866200ADA3BA /* CustomTabBar.swift */,
 				177E2B722828C7170088B3CB /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -176,8 +184,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBCF77AB282A866300ADA3BA /* CustomTabBar.swift in Sources */,
 				177E2B822828C7170088B3CB /* ContentView.swift in Sources */,
 				177E2B802828C7170088B3CB /* KNU_MuseumApp.swift in Sources */,
+				CBAC4F5A282AB345005C0A82 /* TapModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,8 +195,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBCF77AC282A866300ADA3BA /* CustomTabBar.swift in Sources */,
 				177E2B832828C7170088B3CB /* ContentView.swift in Sources */,
 				177E2B812828C7170088B3CB /* KNU_MuseumApp.swift in Sources */,
+				CBAC4F5B282AB345005C0A82 /* TapModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

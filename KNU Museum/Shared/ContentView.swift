@@ -13,48 +13,57 @@ struct ContentView: View {
         NavigationView {
             Home()
                 .navigationBarTitle("", displayMode: .inline)
-                .navigationBarHidden(true)
-                .navigationBarBackButtonHidden(true)
+               .navigationBarHidden(true)
+               .navigationBarBackButtonHidden(true)
         }
     }
 }
 
 struct Home: View {
+    
     var body: some View {
-        VStack{
-            HStack{
-                Text("KNU Museum")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                
-                Spacer()
-                
-                Button(action: {
+        VStack(spacing:0){
+                VStack(spacing:0){
+                    HStack{
+                        Text("KNU Museum")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            
+                        }) {
+                            Image(systemName: "desktopcomputer")
+                                .font(.title)
+                                .foregroundColor(.white)
+                        }
+                    }
+                    .padding(.horizontal)
+                    .padding(.bottom)
+  //                  .padding(.top)
                     
-                }) {
-                    Image(systemName: "desktopcomputer")
-                        .font(.title)
-                        .foregroundColor(.white)
-                }
-            }
-            .padding(.horizontal)
-            .padding(.top)
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                
-                VStack(spacing: 10){
-                    ForEach(data){ i in
-                        Card(data: i)
+                    ScrollView(.vertical, showsIndicators: false) {
+                        
+                        VStack(spacing: 10){
+                            ForEach(data){ i in
+                                Card(data: i)
+                            }
+                        }
+                        .padding(.bottom)
                     }
                 }
-                .padding(.bottom)
-            }
+                .tag(Tap.bookmark)
+                .background(LinearGradient(gradient: .init(colors: [Color("Color1"), Color("Color3")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
+                .edgesIgnoringSafeArea(.bottom)
+                
+            CustumTapBar()
 
-        }
-        .background(LinearGradient(gradient: .init(colors: [Color("Color1"), Color("Color3")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
-        .edgesIgnoringSafeArea(.bottom)
-    }
+                }
+                
+            }
+    
 }
 
 
@@ -188,6 +197,8 @@ var data = [
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+        }
     }
 }
