@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Shared
 //
-//  Created by Sreya Reddy on 09/05/22.
+//  Created by Team 8 on 09/05/22.
 //
 
 import SwiftUI
@@ -13,56 +13,48 @@ struct ContentView: View {
         NavigationView {
             Home()
                 .navigationBarTitle("", displayMode: .inline)
-               .navigationBarHidden(true)
-               .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
         }
     }
 }
 
 struct Home: View {
-    
     var body: some View {
-        VStack(spacing:0){
-                VStack(spacing:0){
-                    HStack{
-                        Text("KNU Museum")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                        
-                        Spacer()
-                        
-                        Button(action: {
-                            
-                        }) {
-                            Image(systemName: "desktopcomputer")
-                                .font(.title)
-                                .foregroundColor(.white)
-                        }
-                    }
-                    .padding(.horizontal)
-                    .padding(.bottom)
-  //                  .padding(.top)
+        VStack{
+            HStack{
+                Text("KNU Museum")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                
+                Spacer()
+                
+                Button(action: {
                     
-                    ScrollView(.vertical, showsIndicators: false) {
-                        
-                        VStack(spacing: 10){
-                            ForEach(data){ i in
-                                Card(data: i)
-                            }
-                        }
-                        .padding(.bottom)
+                }) {
+                    Image(systemName: "desktopcomputer")
+                        .font(.title)
+                        .foregroundColor(.white)
+                }
+            }
+            .padding(.horizontal)
+            .padding(.top)
+            
+            ScrollView(.vertical, showsIndicators: false) {
+                
+                VStack(spacing: 10){
+                    ForEach(data){ i in
+                        Card(data: i)
                     }
                 }
-                .tag(Tap.bookmark)
-                .background(LinearGradient(gradient: .init(colors: [Color("Color1"), Color("Color3")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
-                .edgesIgnoringSafeArea(.bottom)
-                
-\
-                }
-                
+                .padding(.bottom)
             }
-    
+
+        }
+        .background(LinearGradient(gradient: .init(colors: [Color("Color1"), Color("Color3")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
+        .edgesIgnoringSafeArea(.bottom)
+    }
 }
 
 
@@ -81,12 +73,14 @@ struct Card: View {
             VStack(spacing: 20){
                 Spacer(minLength: 0)
                 
+                
                 Text(self.data.name)
                     .font(.title)
                     .fontWeight(.regular)
                     .foregroundColor(.white.opacity(0.8))
 
                 Spacer()
+                
                 
                 NavigationLink(destination: Detail(data: self.data)) {
                     Text("See Details")
@@ -96,6 +90,7 @@ struct Card: View {
                         .padding(.vertical, 12)
                         .padding(.horizontal, 15)
                         .background(Capsule().stroke(.white.opacity(0.8), lineWidth: 2))
+                    
                 }
                 .offset(y: -35)
             }
@@ -191,20 +186,19 @@ struct Object: Identifiable {
     var image: String
     var name: String
     var info: String
+    var year: String
 }
 
 var data = [
-    Object(id: 0, image: "Image1", name: "Object 1", info: "Image 1 info is typed here"),
-    Object(id: 1, image: "Image2", name: "Object 2", info: "Image 2 info is typed here"),
-    Object(id: 2, image: "Image3", name: "Object 3", info: "Image 3 info is typed here")
+    Object(id: 0, image: "Image1", name: "Object 1 Name", info: "Image 1 info is typed here", year: "1020 AD"),
+    Object(id: 1, image: "Image2", name: "Object 2 Name", info: "Image 2 info is typed here", year: "200 AD"),
+    Object(id: 2, image: "Image3", name: "Object 3 Name", info: "Image 3 info is typed here", year: "1280 AD")
 ]
 
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            ContentView()
-        }
+        ContentView()
     }
 }
