@@ -81,6 +81,13 @@ struct Card: View {
             VStack(spacing: 20){
                 Spacer(minLength: 0)
                 
+                Text(self.data.name)
+                    .font(.title)
+                    .fontWeight(.regular)
+                    .foregroundColor(.white.opacity(0.8))
+
+                Spacer()
+                
                 NavigationLink(destination: Detail(data: self.data)) {
                     Text("See Details")
                         .font(.callout)
