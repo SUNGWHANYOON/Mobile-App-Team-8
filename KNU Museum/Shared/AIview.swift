@@ -11,6 +11,9 @@ struct AIview: View {
     
     @Environment(\.presentationMode) var present
     
+    @State private var Boolshowlibrary = false
+    @State private var nowimage = UIImage()
+    
     var body: some View {
         GeometryReader{Geometry in
             VStack {
@@ -32,15 +35,48 @@ struct AIview: View {
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                 }
-                Image("Image1")
+                Image(uiImage: self.nowimage)
                     .resizable()
                     .frame(width: UIScreen.main.bounds.width - 30, height: UIScreen.main.bounds.height / 2)
                     .background(Color.white.opacity(0.2))
                     .cornerRadius(30)
-                AIbutton(data: "Upload From Gallery")
-                AIbutton(data: "Take Photo")
-                AIbutton(data: "Predict")
+                ZStack{
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.white.opacity(0.2))
+                    Button{
+                        self.Boolshowlibrary = true
+                    }label:{
+                        Text("Upload From Gallery")
+                            .font(.title)
+                            .foregroundColor(.white.opacity(0.8))
+                    }
+                }
+                ZStack{
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.white.opacity(0.2))
+                    Button{
+                    }label:{
+                        Text("Take Photo")
+                            .font(.title)
+                            .foregroundColor(.white.opacity(0.8))
+                    }
+                }
+                ZStack{
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.white.opacity(0.2))
+                    Button{
+                    }label:{
+                        Text("Predict")
+                            .font(.title)
+                            .foregroundColor(.white.opacity(0.8))
+                    }
+                }
+                
             }
+            .sheet(isPresented: $Boolshowlibrary){
+                ImagePicker(sourceType: .photoLibrary, selectedImage: self.$nowimage)
+            }
+
         }
         .background(LinearGradient(gradient: .init(colors: [Color("Color2"), Color("Color4")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
         .navigationBarTitle("", displayMode: .inline)
@@ -48,36 +84,3 @@ struct AIview: View {
         .navigationBarHidden(true)
     }
 }
-
-struct AIbutton: View{
-
-    var data: String
-
-    init(data: String){
-        self.data = data
-    }
-    var body: some View{
-        ZStack{
-            RoundedRectangle(cornerRadius: 20)
-                .fill(Color.white.opacity(0.2))
-            
-            if data == "Upload From Gallery"{
-                NavigationLink(destination: ImageContentView()){
-                    Text("Upload From Gallery")
-                }
-            }
-            else{
-                Button{
-
-                }label:{
-                    Text(self.data)
-                        .font(.title)
-                        .foregroundColor(.white.opacity(0.8))
-                }
-                .padding()
-            }
-        }
-        Spacer()
-    }
-}
-
