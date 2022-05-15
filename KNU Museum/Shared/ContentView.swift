@@ -35,14 +35,12 @@ struct Home: View {
                     .foregroundColor(.white)
                 
                 Spacer()
-
-                Button(action: {
-                    
-                }) {
+                NavigationLink(destination: AIview()){
                     Image(systemName: "desktopcomputer")
                         .font(.title)
                         .foregroundColor(.white)
                 }
+
             }
             .padding(.horizontal)
             .padding(.top)
