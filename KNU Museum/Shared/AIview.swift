@@ -51,6 +51,7 @@ struct AIview: View {
                             .foregroundColor(.white.opacity(0.8))
                     }
                 }
+                .padding(.horizontal)
                 ZStack{
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color.white.opacity(0.2))
@@ -61,6 +62,7 @@ struct AIview: View {
                             .foregroundColor(.white.opacity(0.8))
                     }
                 }
+                .padding(.horizontal)
                 ZStack{
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color.white.opacity(0.2))
@@ -71,6 +73,7 @@ struct AIview: View {
                             .foregroundColor(.white.opacity(0.8))
                     }
                 }
+                .padding(.horizontal)
                 
             }
             .sheet(isPresented: $Boolshowlibrary){
