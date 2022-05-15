@@ -59,11 +59,13 @@ struct AIbutton: View{
     var body: some View{
         ZStack{
             RoundedRectangle(cornerRadius: 20)
-                .fill(Color.white)
+                .fill(Color.white.opacity(0.2))
             Button{
 
             }label:{
                 Text(self.data)
+                    .font(.title)
+                    .foregroundColor(.white.opacity(0.8))
             }
             .padding()
         }
