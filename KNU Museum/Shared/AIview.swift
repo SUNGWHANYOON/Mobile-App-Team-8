@@ -50,9 +50,9 @@ struct AIview: View {
 }
 
 struct AIbutton: View{
-    
+
     var data: String
-    
+
     init(data: String){
         self.data = data
     }
@@ -61,7 +61,7 @@ struct AIbutton: View{
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color.white)
             Button{
-                
+
             }label:{
                 Text(self.data)
             }
