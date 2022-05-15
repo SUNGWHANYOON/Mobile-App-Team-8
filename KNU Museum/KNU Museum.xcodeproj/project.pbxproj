@@ -21,6 +21,8 @@
 		177E2B832828C7170088B3CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E2B712828C7160088B3CB /* ContentView.swift */; };
 		177E2B842828C7170088B3CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177E2B722828C7170088B3CB /* Assets.xcassets */; };
 		177E2B852828C7170088B3CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177E2B722828C7170088B3CB /* Assets.xcassets */; };
+		CB4A986228311DB100EC667D /* OpenGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4A986128311DB100EC667D /* OpenGallery.swift */; };
+		CB4A986328311DB100EC667D /* OpenGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4A986128311DB100EC667D /* OpenGallery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,7 @@
 		177E2B772828C7170088B3CB /* KNU Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KNU Museum.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177E2B7D2828C7170088B3CB /* KNU Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KNU Museum.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177E2B7F2828C7170088B3CB /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		CB4A986128311DB100EC667D /* OpenGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGallery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,7 @@
 				1738F49F28309F390054393D /* ViewModel.swift */,
 				177E2B702828C7160088B3CB /* KNU_MuseumApp.swift */,
 				177E2B712828C7160088B3CB /* ContentView.swift */,
+				CB4A986128311DB100EC667D /* OpenGallery.swift */,
 				1738F4AE2830BE270054393D /* Detail.swift */,
 				1738F4A82830BD370054393D /* AIview.swift */,
 				177E2B722828C7170088B3CB /* Assets.xcassets */,
@@ -197,6 +201,7 @@
 				1738F4AF2830BE270054393D /* Detail.swift in Sources */,
 				1738F4A62830A06F0054393D /* MuseumModel.swift in Sources */,
 				1738F4A028309F390054393D /* ViewModel.swift in Sources */,
+				CB4A986228311DB100EC667D /* OpenGallery.swift in Sources */,
 				177E2B802828C7170088B3CB /* KNU_MuseumApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +215,7 @@
 				1738F4B02830BE270054393D /* Detail.swift in Sources */,
 				1738F4A72830A06F0054393D /* MuseumModel.swift in Sources */,
 				1738F4A128309F390054393D /* ViewModel.swift in Sources */,
+				CB4A986328311DB100EC667D /* OpenGallery.swift in Sources */,
 				177E2B812828C7170088B3CB /* KNU_MuseumApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

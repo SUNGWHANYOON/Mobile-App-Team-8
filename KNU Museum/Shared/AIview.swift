@@ -60,14 +60,22 @@ struct AIbutton: View{
         ZStack{
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color.white.opacity(0.2))
-            Button{
-
-            }label:{
-                Text(self.data)
-                    .font(.title)
-                    .foregroundColor(.white.opacity(0.8))
+            
+            if data == "Upload From Gallery"{
+                NavigationLink(destination: ImageContentView()){
+                    Text("Upload From Gallery")
+                }
             }
-            .padding()
+            else{
+                Button{
+
+                }label:{
+                    Text(self.data)
+                        .font(.title)
+                        .foregroundColor(.white.opacity(0.8))
+                }
+                .padding()
+            }
         }
         Spacer()
     }
