@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct KNU_MuseumApp: App {
+    let data = ViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(objectContent: data)
         }
     }
 }

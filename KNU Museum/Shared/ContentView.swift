@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var objectContent: ViewModel
+    
     var body: some View {
         
         NavigationView {
-            Home()
+            Home(data: objectContent)
                 .navigationBarTitle("", displayMode: .inline)
                 .navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
@@ -20,6 +23,9 @@ struct ContentView: View {
 }
 
 struct Home: View {
+    
+    let data: ViewModel
+    
     var body: some View {
         VStack{
             HStack{
@@ -29,7 +35,7 @@ struct Home: View {
                     .foregroundColor(.white)
                 
                 Spacer()
-                
+
                 Button(action: {
                     
                 }) {
@@ -44,7 +50,7 @@ struct Home: View {
             ScrollView(.vertical, showsIndicators: false) {
                 
                 VStack(spacing: 10){
-                    ForEach(data){ i in
+                    ForEach(data.objects){ i in
                         Card(data: i)
                     }
                 }
@@ -60,7 +66,7 @@ struct Home: View {
 
 struct Card: View {
     
-    var data: Object
+    var data: ViewModel.Object
     
     var body: some View {
         HStack{
@@ -115,7 +121,7 @@ struct Card: View {
 
 struct Detail: View {
     
-    var data: Object
+    var data: ViewModel.Object
     
     // Used to pop the top most view on the stack
     @Environment(\.presentationMode) var present
@@ -179,26 +185,9 @@ struct Detail: View {
 }
 
 
-// Sample Data
-
-struct Object: Identifiable {
-    var id: Int
-    var image: String
-    var name: String
-    var info: String
-    var year: String
-}
-
-var data = [
-    Object(id: 0, image: "Image1", name: "Object 1 Name", info: "Image 1 info is typed here", year: "1020 AD"),
-    Object(id: 1, image: "Image2", name: "Object 2 Name", info: "Image 2 info is typed here", year: "200 AD"),
-    Object(id: 2, image: "Image3", name: "Object 3 Name", info: "Image 3 info is typed here", year: "1280 AD")
-]
-
-
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let data = ViewModel()
+        ContentView(objectContent: data)
     }
 }
