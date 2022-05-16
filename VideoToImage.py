@@ -3,6 +3,7 @@ import os
 import imutils
 
 vidcap = cv2.VideoCapture('/Users/sreyareddy/Developer/Python/KNU Museum/All Videos/102.MOV')
+
 save_path = '/Users/sreyareddy/Developer/Python/KNU Museum/Images/Train/10'
 
 def getFrame(sec):
@@ -22,7 +23,9 @@ def getFrame(sec):
     return hasFrames
 
 sec = 0
-frameRate = 0.5  # //it will capture image in each 0.5 second
+
+# Capture one frame every 0.5 seconds
+frameRate = 0.5  
 count = 1
 success = getFrame(sec)
 while success:
@@ -30,3 +33,5 @@ while success:
     sec = sec + frameRate
     sec = round(sec, 2)
     success = getFrame(sec)
+
+    
