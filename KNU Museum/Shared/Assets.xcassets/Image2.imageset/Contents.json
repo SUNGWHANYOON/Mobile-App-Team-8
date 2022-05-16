@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "IMG_5428-removebg-preview.png",
+      "filename" : "Image2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "IMG_5428-removebg-preview@2x.png",
+      "filename" : "Image2@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "IMG_5428-removebg-preview@3x.png",
+      "filename" : "Image2@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
