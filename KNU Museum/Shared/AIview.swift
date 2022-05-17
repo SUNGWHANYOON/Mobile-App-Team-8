@@ -58,7 +58,7 @@ struct AIview: View {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color.white.opacity(0.2))
                     Button{
-                        self.BoolshowCamera = true
+                        self.BoolshowCamera = true //camera test part
                     }label:{
                         Text("Take Photo")
                             .font(.title)
@@ -84,7 +84,7 @@ struct AIview: View {
             }
             .sheet(isPresented: $BoolshowCamera){
                 ImagePicker(sourceType: .camera, selectedImage: self.$nowimage)
-            }
+            } // camera test part
         }
         .background(LinearGradient(gradient: .init(colors: [Color("Color2"), Color("Color4")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
         .navigationBarTitle("", displayMode: .inline)
