@@ -12,6 +12,8 @@ struct AIview: View {
     @Environment(\.presentationMode) var present
     
     @State private var Boolshowlibrary = false
+    @State private var BoolshowCamera = false
+
     @State private var nowimage = UIImage()
     
     var body: some View {
@@ -56,6 +58,7 @@ struct AIview: View {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color.white.opacity(0.2))
                     Button{
+                        self.BoolshowCamera = true
                     }label:{
                         Text("Take Photo")
                             .font(.title)
@@ -79,7 +82,9 @@ struct AIview: View {
             .sheet(isPresented: $Boolshowlibrary){
                 ImagePicker(sourceType: .photoLibrary, selectedImage: self.$nowimage)
             }
-
+            .sheet(isPresented: $BoolshowCamera){
+                ImagePicker(sourceType: .camera, selectedImage: self.$nowimage)
+            }
         }
         .background(LinearGradient(gradient: .init(colors: [Color("Color2"), Color("Color4")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
         .navigationBarTitle("", displayMode: .inline)
