@@ -32,7 +32,7 @@ struct AIview: View {
                         Spacer()
                         Spacer()
                     }
-                    Text("AI view")
+                    Text("AI View")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
