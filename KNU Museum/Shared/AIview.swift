@@ -15,7 +15,7 @@ struct AIview: View {
     @State private var BoolshowCamera = false
 
     @State private var nowimage = UIImage()
-    
+  
     var body: some View {
         GeometryReader{Geometry in
             VStack {
@@ -28,11 +28,12 @@ struct AIview: View {
                             Image(systemName: "chevron.left")
                                 .font(.title)
                                 .foregroundColor(.white)
+                                .padding(.horizontal)
                         }
                         Spacer()
                         Spacer()
                     }
-                    Text("AI View")
+                    Text("AI view")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
@@ -54,6 +55,7 @@ struct AIview: View {
                     }
                 }
                 .padding(.horizontal)
+                
                 ZStack{
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color.white.opacity(0.2))
@@ -66,10 +68,12 @@ struct AIview: View {
                     }
                 }
                 .padding(.horizontal)
+                
                 ZStack{
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color.white.opacity(0.2))
                     Button{
+                        
                     }label:{
                         Text("Predict")
                             .font(.title)
@@ -92,3 +96,4 @@ struct AIview: View {
         .navigationBarHidden(true)
     }
 }
+

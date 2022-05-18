@@ -47,7 +47,7 @@ struct Home: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 
-                VStack(spacing: 10){
+                VStack(spacing: 40){
                     ForEach(data.objects){ i in
                         Card(data: i)
                     }
@@ -56,7 +56,7 @@ struct Home: View {
             }
 
         }
-        .background(LinearGradient(gradient: .init(colors: [Color("Color1"), Color("Color3")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
+        .background(LinearGradient(gradient: .init(colors: [Color("Color2"), Color("Color3")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
         .edgesIgnoringSafeArea(.bottom)
     }
 }
@@ -91,8 +91,8 @@ struct Card: View {
                         .font(.callout)
                         .fontWeight(.medium)
                         .foregroundColor(.white.opacity(0.8))
-                        .padding(.vertical, 12)
-                        .padding(.horizontal, 15)
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 10)
                         .background(Capsule().stroke(.white.opacity(0.8), lineWidth: 2))
                     
                 }
