@@ -70,6 +70,7 @@ struct Card: View {
         HStack{
             Image(self.data.image)
                 .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(width: UIScreen.main.bounds.width / 1.8)
             
             Spacer()
@@ -80,7 +81,7 @@ struct Card: View {
                 
                 Text(self.data.name)
                     .font(.title)
-                    .fontWeight(.regular)
+                    .fontWeight(.bold)
                     .foregroundColor(.white.opacity(0.8))
 
                 Spacer()
