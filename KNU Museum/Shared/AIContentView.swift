@@ -9,7 +9,7 @@ import SwiftUI
 import CoreML
 import UIKit
 
-struct AIPredict: View{
+class AIPredict{
     
     let model = Classifier()
     
@@ -21,14 +21,6 @@ struct AIPredict: View{
         
         return output.classLabel // output label comes out
         }
-    
-    
-    var body: some View{
-        HStack{
-            Image(systemName: "clock")
-            Text(classifyImage())
-        }
-    }
         
 }
 
@@ -60,11 +52,5 @@ extension UIImage {
         }
 
         return nil
-    }
-}
-
-struct AIPredictView_Previews: PreviewProvider {
-    static var previews: some View {
-        AIPredict()
     }
 }

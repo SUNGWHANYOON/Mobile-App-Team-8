@@ -22,16 +22,16 @@ struct MuseumModel {
     
     //12, 10, 14, 17, 29, 9, 16, 35, 15, 28
     var data = [
-        Object(id: 11, image: "Image1", name: mdata.relics[11]["name"] as! String, info: mdata.relics[11]["info"] as! String, generation: mdata.relics[11]["generation"] as! String, relic_no: mdata.relics[11]["relicNo"] as! String),
-        Object(id: 9, image: "Image2", name: mdata.relics[9]["name"] as! String, info: mdata.relics[9]["info"] as! String, generation: mdata.relics[9]["generation"] as! String, relic_no: mdata.relics[9]["relicNo"] as! String),
-        Object(id: 13, image: "Image3", name: mdata.relics[13]["name"] as! String, info: mdata.relics[13]["info"] as! String, generation: mdata.relics[13]["generation"] as! String, relic_no: mdata.relics[13]["relicNo"] as! String),
-        Object(id: 16, image: "Image4", name: mdata.relics[16]["name"] as! String, info: mdata.relics[16]["info"] as! String, generation: mdata.relics[16]["generation"] as! String, relic_no: mdata.relics[16]["relicNo"] as! String),
-        Object(id: 28, image: "Image5", name: mdata.relics[28]["name"] as! String, info: mdata.relics[28]["info"] as! String, generation: mdata.relics[28]["generation"] as! String, relic_no: mdata.relics[28]["relicNo"] as! String),
-        Object(id: 8, image: "Image6", name: mdata.relics[8]["name"] as! String, info: mdata.relics[8]["info"] as! String, generation: mdata.relics[8]["generation"] as! String, relic_no: mdata.relics[8]["relicNo"] as! String),
-        Object(id: 15, image: "Image7", name: mdata.relics[15]["name"] as! String, info: mdata.relics[15]["info"] as! String, generation: mdata.relics[15]["generation"] as! String, relic_no: mdata.relics[15]["relicNo"] as! String),
-        Object(id: 34, image: "Image8", name: mdata.relics[34]["name"] as! String, info: mdata.relics[34]["info"] as! String, generation: mdata.relics[34]["generation"] as! String, relic_no: mdata.relics[34]["relicNo"] as! String),
-        Object(id: 14, image: "Image9", name: mdata.relics[14]["name"] as! String, info: mdata.relics[14]["info"] as! String, generation: mdata.relics[14]["generation"] as! String, relic_no: mdata.relics[14]["relicNo"] as! String),
-        Object(id: 27, image: "Image10", name: mdata.relics[27]["name"] as! String, info: mdata.relics[27]["info"] as! String, generation: mdata.relics[27]["generation"] as! String, relic_no: mdata.relics[27]["relicNo"] as! String),
+        Object(id: 1, image: "Image1", name: mdata.relics[11]["name"] as! String, info: mdata.relics[11]["info"] as! String, generation: mdata.relics[11]["generation"] as! String, relic_no: mdata.relics[11]["relicNo"] as! String),
+        Object(id: 2, image: "Image2", name: mdata.relics[9]["name"] as! String, info: mdata.relics[9]["info"] as! String, generation: mdata.relics[9]["generation"] as! String, relic_no: mdata.relics[9]["relicNo"] as! String),
+        Object(id: 3, image: "Image3", name: mdata.relics[13]["name"] as! String, info: mdata.relics[13]["info"] as! String, generation: mdata.relics[13]["generation"] as! String, relic_no: mdata.relics[13]["relicNo"] as! String),
+        Object(id: 4, image: "Image4", name: mdata.relics[16]["name"] as! String, info: mdata.relics[16]["info"] as! String, generation: mdata.relics[16]["generation"] as! String, relic_no: mdata.relics[16]["relicNo"] as! String),
+        Object(id: 5, image: "Image5", name: mdata.relics[28]["name"] as! String, info: mdata.relics[28]["info"] as! String, generation: mdata.relics[28]["generation"] as! String, relic_no: mdata.relics[28]["relicNo"] as! String),
+        Object(id: 6, image: "Image6", name: mdata.relics[8]["name"] as! String, info: mdata.relics[8]["info"] as! String, generation: mdata.relics[8]["generation"] as! String, relic_no: mdata.relics[8]["relicNo"] as! String),
+        Object(id: 7, image: "Image7", name: mdata.relics[15]["name"] as! String, info: mdata.relics[15]["info"] as! String, generation: mdata.relics[15]["generation"] as! String, relic_no: mdata.relics[15]["relicNo"] as! String),
+        Object(id: 8, image: "Image8", name: mdata.relics[34]["name"] as! String, info: mdata.relics[34]["info"] as! String, generation: mdata.relics[34]["generation"] as! String, relic_no: mdata.relics[34]["relicNo"] as! String),
+        Object(id: 9, image: "Image9", name: mdata.relics[14]["name"] as! String, info: mdata.relics[14]["info"] as! String, generation: mdata.relics[14]["generation"] as! String, relic_no: mdata.relics[14]["relicNo"] as! String),
+        Object(id: 10, image: "Image10", name: mdata.relics[27]["name"] as! String, info: mdata.relics[27]["info"] as! String, generation: mdata.relics[27]["generation"] as! String, relic_no: mdata.relics[27]["relicNo"] as! String),
     ]
     
 
