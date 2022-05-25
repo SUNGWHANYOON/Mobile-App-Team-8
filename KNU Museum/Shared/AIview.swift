@@ -15,10 +15,13 @@ struct AIview: View {
     @State private var BoolshowCamera = false
     @State private var boolState = false
     @State private var nowimage = UIImage()
+    @State private var predictvalue: String = "-1"
     
     @State private var defultimage = Image("Default Image")
     
     var data : ViewModel
+    
+
   
     var body: some View {
         GeometryReader{Geometry in
@@ -78,13 +81,22 @@ struct AIview: View {
                 ZStack{
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color.white.opacity(0.2))
-                    if nowimage.size.width != 0{
-//                        NavigationLink(destination:Detail(data: self.data.objects.first(where:{$0.id == Int(AIPredict(image : self.nowimage).classifyImage())})!)
- //                           ,label:{
-                            Text(AIPredict(image : self.nowimage).classifyImage())
+                    if predictvalue != "-1"{
+                        NavigationLink(destination:Detail(data: self.data.objects.first(where:{$0.id == Int(predictvalue)})!)
+                            ,label:{
+                            Text("Output is come")
                                 .font(.title)
                                 .foregroundColor(.white.opacity(0.8))
- //                       })
+                        })
+                    }
+                    else{
+                        Button{
+                            SetPredictvalue()
+                        }label:{
+                            Text("Predict")
+                                .font(.title)
+                                .foregroundColor(.white.opacity(0.8))
+                        }
                     }
                 }
                 .padding(.horizontal)
@@ -104,3 +116,11 @@ struct AIview: View {
     }
 }
 
+
+extension AIview{
+    func SetPredictvalue(){
+        if boolState{
+            self.predictvalue = AIPredict(image : self.nowimage).classifyImage()
+        }
+    }
+}

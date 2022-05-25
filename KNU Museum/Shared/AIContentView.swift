@@ -25,6 +25,7 @@ class AIPredict{
         
         let output = try! model.prediction(image: buffer!)
         
+        print(output.classLabelProbs)
         return output.classLabel // output label comes out
         }
         
