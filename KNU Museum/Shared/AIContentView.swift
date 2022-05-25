@@ -14,12 +14,12 @@ struct AIPredict: View{
     let model = Classifier()
     
     private func classifyImage() -> String {
-        let image = UIImage(named: "Image1")
+        let image = UIImage(named: "Image1") // random image
         let buffer = image?.toCVPixelBuffer()
         
         let output = try! model.prediction(image: buffer!)
         
-        return output.classLabel
+        return output.classLabel // output label comes out
         }
     
     
