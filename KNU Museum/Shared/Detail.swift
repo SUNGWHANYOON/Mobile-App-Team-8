@@ -46,15 +46,17 @@ struct Detail: View {
             }
             .padding()
             
-            Image(self.data.image)
+            ScrollView(.vertical, showsIndicators: false) {
+                Image(self.data.image)
                 .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(width: UIScreen.main.bounds.width - 30, height: UIScreen.main.bounds.height / 2)
                 .background(Color.white.opacity(0.2))
                 .cornerRadius(30)
             
             Text(self.data.name)
                 .fontWeight(.bold)
-                .font(.system(size: 55))
+                .font(.title)
                 .foregroundColor(.white)
                 .padding(.top)
             
@@ -64,6 +66,8 @@ struct Detail: View {
                 .padding(.top)
             
             Spacer()
+            }
+            
         }
         .background(LinearGradient(gradient: .init(colors: [Color("Color2"), Color("Color4")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
         .navigationBarTitle("", displayMode: .inline)
