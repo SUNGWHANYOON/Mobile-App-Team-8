@@ -16,12 +16,8 @@ struct AIview: View {
     @State private var boolState = false
     @State private var nowimage = UIImage()
     @State private var predictvalue: String = "-1"
-    
-    @State private var defultimage = Image("Default Image")
-    
+        
     var data : ViewModel
-    
-
   
     var body: some View {
         GeometryReader{Geometry in
@@ -84,7 +80,7 @@ struct AIview: View {
                     if predictvalue != "-1"{
                         NavigationLink(destination:Detail(data: self.data.objects.first(where:{$0.id == Int(predictvalue)})!)
                             ,label:{
-                            Text("Output is come")
+                            Text("Output comes")
                                 .font(.title)
                                 .foregroundColor(.white.opacity(0.8))
                         })
