@@ -11,9 +11,15 @@ import UIKit
 
 class AIPredict{
     
+    var data = UIImage()
+    
     let model = Classifier()
     
-    private func classifyImage() -> String {
+    init(image : UIImage){
+        self.data = image
+    }
+    
+    func classifyImage() -> String {
         let image = UIImage(named: "Image1") // random image
         let buffer = image?.toCVPixelBuffer()
         

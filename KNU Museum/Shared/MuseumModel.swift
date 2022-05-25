@@ -33,7 +33,6 @@ struct MuseumModel {
         Object(id: 9, image: "Image9", name: mdata.relics[14]["name"] as! String, info: mdata.relics[14]["info"] as! String, generation: mdata.relics[14]["generation"] as! String, relic_no: mdata.relics[14]["relicNo"] as! String),
         Object(id: 10, image: "Image10", name: mdata.relics[27]["name"] as! String, info: mdata.relics[27]["info"] as! String, generation: mdata.relics[27]["generation"] as! String, relic_no: mdata.relics[27]["relicNo"] as! String),
     ]
-    
 
 }
 

@@ -15,6 +15,8 @@ struct AIview: View {
     @State private var BoolshowCamera = false
 
     @State private var nowimage = UIImage()
+    
+    var data : ViewModel
   
     var body: some View {
         GeometryReader{Geometry in
@@ -72,13 +74,12 @@ struct AIview: View {
                 ZStack{
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color.white.opacity(0.2))
-                    Button{
-                        
-                    }label:{
+                    NavigationLink(destination:Detail(data: self.data.objects.first(where:{$0.id == Int(AIPredict(image : self.nowimage).classifyImage())})!)
+                        ,label:{
                         Text("Predict")
                             .font(.title)
                             .foregroundColor(.white.opacity(0.8))
-                    }
+                    })
                 }
                 .padding(.horizontal)
                 

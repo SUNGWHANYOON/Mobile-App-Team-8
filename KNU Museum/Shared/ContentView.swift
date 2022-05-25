@@ -36,7 +36,7 @@ struct Home: View {
                 
                 Spacer()
 
-                NavigationLink(destination: AIview()){
+                NavigationLink(destination: AIview(data: self.data)){
                     Image(systemName: "desktopcomputer")
                         .font(.title)
                         .foregroundColor(.white)
