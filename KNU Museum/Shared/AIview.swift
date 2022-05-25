@@ -13,8 +13,10 @@ struct AIview: View {
     
     @State private var Boolshowlibrary = false
     @State private var BoolshowCamera = false
-
+    @State private var boolState = false
     @State private var nowimage = UIImage()
+    
+    @State private var defultimage = Image("Default Image")
     
     var data : ViewModel
   
@@ -50,6 +52,7 @@ struct AIview: View {
                         .fill(Color.white.opacity(0.2))
                     Button{
                         self.Boolshowlibrary = true
+                        self.boolState = true
                     }label:{
                         Text("Upload From Gallery")
                             .font(.title)
@@ -63,6 +66,7 @@ struct AIview: View {
                         .fill(Color.white.opacity(0.2))
                     Button{
                         self.BoolshowCamera = true //camera test part
+                        self.boolState = true
                     }label:{
                         Text("Take Photo")
                             .font(.title)
@@ -74,12 +78,14 @@ struct AIview: View {
                 ZStack{
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color.white.opacity(0.2))
-                    NavigationLink(destination:Detail(data: self.data.objects.first(where:{$0.id == Int(AIPredict(image : self.nowimage).classifyImage())})!)
-                        ,label:{
-                        Text("Predict")
-                            .font(.title)
-                            .foregroundColor(.white.opacity(0.8))
-                    })
+                    if nowimage.size.width != 0{
+//                        NavigationLink(destination:Detail(data: self.data.objects.first(where:{$0.id == Int(AIPredict(image : self.nowimage).classifyImage())})!)
+ //                           ,label:{
+                            Text(AIPredict(image : self.nowimage).classifyImage())
+                                .font(.title)
+                                .foregroundColor(.white.opacity(0.8))
+ //                       })
+                    }
                 }
                 .padding(.horizontal)
                 

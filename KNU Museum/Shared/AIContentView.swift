@@ -20,8 +20,8 @@ class AIPredict{
     }
     
     func classifyImage() -> String {
-        let image = UIImage(named: "Image1") // random image
-        let buffer = image?.toCVPixelBuffer()
+        let image = self.data // random image
+        let buffer = image.toCVPixelBuffer()
         
         let output = try! model.prediction(image: buffer!)
         
