@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct AIview: View {
     
@@ -83,6 +84,13 @@ struct AIview: View {
                             Text("Output comes")
                                 .font(.title)
                                 .foregroundColor(.white.opacity(0.8))
+                        }).simultaneousGesture(TapGesture().onEnded{
+                            if nowimage.size.width == 0{
+                                predictvalue = "-1"
+                            }
+                            else{
+                                self.nowimage = UIImage()
+                            }
                         })
                     }
                     else{
@@ -114,6 +122,7 @@ struct AIview: View {
 
 
 extension AIview{
+    
     func SetPredictvalue(){
         if boolState{
             self.predictvalue = AIPredict(image : self.nowimage).classifyImage()
