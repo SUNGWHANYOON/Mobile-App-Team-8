@@ -36,7 +36,7 @@ struct Home: View {
                 
                 Spacer()
 
-                NavigationLink(destination: AIview(data: self.data)){
+                NavigationLink(destination: AIview(dataContent: data)){
                     Image(systemName: "desktopcomputer")
                         .font(.title)
                         .foregroundColor(.white)
@@ -70,7 +70,6 @@ struct Card: View {
         HStack{
             Image(self.data.image)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
                 .frame(width: UIScreen.main.bounds.width / 1.8)
             
             Spacer()
@@ -81,7 +80,7 @@ struct Card: View {
                 
                 Text(self.data.name)
                     .font(.title)
-                    .fontWeight(.bold)
+                    .fontWeight(.regular)
                     .foregroundColor(.white.opacity(0.8))
 
                 Spacer()
@@ -123,4 +122,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView(objectContent: data)
     }
 }
-

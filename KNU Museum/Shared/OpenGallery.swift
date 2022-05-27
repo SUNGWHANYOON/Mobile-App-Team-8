@@ -7,11 +7,14 @@
 
 import SwiftUI
 import UIKit
+import CoreML
+import Vision
+
 
 struct ImagePicker: UIViewControllerRepresentable {
     
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
-    
+    @Binding var textstring : String
     @Binding var selectedImage: UIImage
     @Environment(\.presentationMode) private var presentationMode
 
@@ -45,10 +48,38 @@ struct ImagePicker: UIViewControllerRepresentable {
             
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 parent.selectedImage = image
+               
+                predimage(image: image)
+                
             }
             
             parent.presentationMode.wrappedValue.dismiss()
         }
+        func predimage(image : UIImage?) {
+        guard let buffer = image?.resizeImageTo(size: CGSize(width : 224, height: 224))?
+            .convertToBuffer() else {
+        return
+        }
+            do{
+       
+        let config = MLModelConfiguration ()
+        let model = try  Classifier(configuration: config)
+        let input = ClassifierInput(image: buffer)
+        let output = try model.prediction(input: input)
+        //let text =  output.label
+            parent.textstring = output.classLabel
+                
+        //parent.selectedtext.text = text
+                print("predicted value",parent.textstring)
+                print("probability value",output.classLabelProbs)
+            
+            }
+            catch{
+        print(error.localizedDescription )
+            }
+        }
     }
+    
+    
 }
 
