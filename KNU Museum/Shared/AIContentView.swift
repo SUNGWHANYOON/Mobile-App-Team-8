@@ -13,7 +13,7 @@ class AIPredict{
     var data = UIImage()
     @State private var classificationLabel: String = ""
 
-    let model = Classifier()
+    let model = Classifier1()
     
     init(image : UIImage){
         self.data = image
@@ -27,7 +27,7 @@ class AIPredict{
         let output = try! model.prediction(image: buffered_image!)
         
         print(output.classLabelProbs)
-        return output.classLabel
+        return String(Int(arc4random()%10))
         }
         
 }

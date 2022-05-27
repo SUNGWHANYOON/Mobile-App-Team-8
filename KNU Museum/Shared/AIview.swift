@@ -5,7 +5,9 @@
 //  Created by 윤성환 on 2022/05/15.
 //
 
+
 import SwiftUI
+import UIKit
 
 struct AIview: View {
     
@@ -13,8 +15,11 @@ struct AIview: View {
     
     @State private var Boolshowlibrary = false
     @State private var BoolshowCamera = false
-
+    @State private var boolState = false
     @State private var nowimage = UIImage()
+    @State private var predictvalue: String = "-1"
+        
+    var data : ViewModel
   
     var body: some View {
         GeometryReader{Geometry in
@@ -38,9 +43,6 @@ struct AIview: View {
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                 }
-                .padding(.horizontal)
-                .padding(.vertical)
-                
                 Image(uiImage: self.nowimage)
                     .resizable()
                     .frame(width: UIScreen.main.bounds.width - 30, height: UIScreen.main.bounds.height / 2)
@@ -51,6 +53,7 @@ struct AIview: View {
                         .fill(Color.white.opacity(0.2))
                     Button{
                         self.Boolshowlibrary = true
+                        self.boolState = true
                     }label:{
                         Text("Upload From Gallery")
                             .font(.title)
@@ -64,6 +67,7 @@ struct AIview: View {
                         .fill(Color.white.opacity(0.2))
                     Button{
                         self.BoolshowCamera = true //camera test part
+                        self.boolState = true
                     }label:{
                         Text("Take Photo")
                             .font(.title)
@@ -75,12 +79,29 @@ struct AIview: View {
                 ZStack{
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color.white.opacity(0.2))
-                    Button{
-                        
-                    }label:{
-                        Text("Predict")
-                            .font(.title)
-                            .foregroundColor(.white.opacity(0.8))
+                    if predictvalue != "-1"{
+                        NavigationLink(destination:Detail(data: self.data.objects.first(where:{$0.id == Int(predictvalue)})!)
+                            ,label:{
+                            Text("Output comes")
+                                .font(.title)
+                                .foregroundColor(.white.opacity(0.8))
+                        }).simultaneousGesture(TapGesture().onEnded{
+                            if nowimage.size.width == 0{
+                                predictvalue = "-1"
+                            }
+                            else{
+                                self.nowimage = UIImage()
+                            }
+                        })
+                    }
+                    else{
+                        Button{
+                            SetPredictvalue()
+                        }label:{
+                            Text("Predict")
+                                .font(.title)
+                                .foregroundColor(.white.opacity(0.8))
+                        }
                     }
                 }
                 .padding(.horizontal)
@@ -100,3 +121,12 @@ struct AIview: View {
     }
 }
 
+
+extension AIview{
+    
+    func SetPredictvalue(){
+        if boolState{
+            self.predictvalue = AIPredict(image : self.nowimage).classifyImage()
+        }
+    }
+}

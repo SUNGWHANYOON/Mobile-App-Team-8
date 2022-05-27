@@ -13,7 +13,7 @@ struct ContentView: View {
     
     @State var isLoading: Bool = false
     @State var showMenu = false
-    
+
     var body: some View {
         return GeometryReader { geometry in
             ZStack(alignment: .leading) {
@@ -37,6 +37,7 @@ struct ContentView: View {
                         .frame(width: geometry.size.width/2)
                         .transition(.move(edge: .leading))
                 }
+
             }
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: { withAnimation{ isLoading = false }
@@ -71,8 +72,7 @@ struct Home: View {
                     .foregroundColor(.white)
                 
                 Spacer()
-                
-                NavigationLink(destination: AIview()){
+                NavigationLink(destination: AIview(data: self.data)){
                     Image(systemName: "desktopcomputer")
                         .font(.title)
                         .foregroundColor(.white)
