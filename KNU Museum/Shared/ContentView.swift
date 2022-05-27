@@ -11,32 +11,68 @@ struct ContentView: View {
     
     @ObservedObject var objectContent: ViewModel
     
+    @State var isLoading: Bool = false
+    @State var showMenu = false
+    
     var body: some View {
-        
-        NavigationView {
-            Home(data: objectContent)
-                .navigationBarTitle("", displayMode: .inline)
-                .navigationBarHidden(true)
-                .navigationBarBackButtonHidden(true)
+        return GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                if isLoading {
+                    LoadingView().transition(.opacity).zIndex(1)
+                }
+                
+                NavigationView {
+                    Home(data: objectContent, showMenu: self.$showMenu)
+                        .navigationBarTitle("", displayMode: .inline)
+                        .navigationBarHidden(true)
+                        .navigationBarBackButtonHidden(true)
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        .offset(x: self.showMenu ? geometry.size.width/2 : 0)
+                        
+                }
+                .zIndex(0)
+                
+                if self.showMenu {
+                    MenuView()
+                        .frame(width: geometry.size.width/2)
+                        .transition(.move(edge: .leading))
+                }
+            }
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: { withAnimation{ isLoading = false }
+                })
+            }
         }
     }
 }
 
 struct Home: View {
-    
     let data: ViewModel
+    @Binding var showMenu: Bool
     
     var body: some View {
         VStack{
             HStack{
+                Button(action: {
+                    withAnimation {
+                        self.showMenu.toggle()
+                    }
+                }){
+                    Image(systemName: "line.horizontal.3")
+                        .font(.title)
+                        .foregroundColor(.white)
+                }
+                
+                Spacer()
+                
                 Text("KNU Museum")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                 
                 Spacer()
-
-                NavigationLink(destination: AIview(data: self.data)){
+                
+                NavigationLink(destination: AIview()){
                     Image(systemName: "desktopcomputer")
                         .font(.title)
                         .foregroundColor(.white)
@@ -46,15 +82,13 @@ struct Home: View {
             .padding(.top)
             
             ScrollView(.vertical, showsIndicators: false) {
-                
                 VStack(spacing: 40){
                     ForEach(data.objects){ i in
                         Card(data: i)
                     }
                 }
-                .padding(.bottom)
             }
-
+            
         }
         .background(LinearGradient(gradient: .init(colors: [Color("Color2"), Color("Color3")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
         .edgesIgnoringSafeArea(.bottom)
@@ -86,7 +120,6 @@ struct Card: View {
 
                 Spacer()
                 
-                
                 NavigationLink(destination: Detail(data: self.data)) {
                     Text("See Details")
                         .font(.callout)
@@ -117,10 +150,25 @@ struct Card: View {
 }
 
 
+struct LoadingView: View {
+    var body: some View {
+        ZStack{
+            LinearGradient(gradient: Gradient(colors: [Color("Color1"), Color("Color5")]),startPoint: .top, endPoint: .trailing)
+                        .edgesIgnoringSafeArea(.all)
+            
+            Image("appicon_t")
+                .resizable()
+                .frame(width: 200, height: 180)
+                .aspectRatio(contentMode: .fit)
+                
+        }
+    }
+}
+
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let data = ViewModel()
         ContentView(objectContent: data)
     }
 }
-
