@@ -17,7 +17,7 @@ struct AIview: View {
     @State private var BoolshowCamera = false
     @State private var boolState = false
     @State private var nowimage = UIImage()
-    @State private var predictvalue: String = "-1"
+    @State private var predictvalue: String = "1"
         
     var data : ViewModel
   
@@ -68,6 +68,7 @@ struct AIview: View {
                     Button{
                         self.BoolshowCamera = true //camera test part
                         self.boolState = true
+
                     }label:{
                         Text("Take Photo")
                             .font(.title)
@@ -75,34 +76,37 @@ struct AIview: View {
                     }
                 }
                 .padding(.horizontal)
-                
-                ZStack{
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.white.opacity(0.2))
-                    if predictvalue != "-1"{
+                if self.boolState{
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color.white.opacity(0.2))
                         NavigationLink(destination:Detail(data: self.data.objects.first(where:{$0.id == Int(predictvalue)})!)
                             ,label:{
-                            Text("Output comes")
-                                .font(.title)
-                                .foregroundColor(.white.opacity(0.8))
-                        }).simultaneousGesture(TapGesture().onEnded{
-                            if nowimage.size.width == 0{
-                                predictvalue = "-1"
-                            }
-                            else{
-                                self.nowimage = UIImage()
-                            }
-                        })
-                    }
-                    else{
-                        Button{
-                            SetPredictvalue()
-                        }label:{
                             Text("Predict")
                                 .font(.title)
                                 .foregroundColor(.white.opacity(0.8))
-                        }
+                        }).simultaneousGesture(TapGesture().onEnded{
+                            
+                            self.predictvalue = AIPredict(image : self.nowimage).classifyImage()
+                            print(predictvalue)
+                        })
+                        
                     }
+                    .padding(.horizontal)
+                }
+                ZStack{
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.white.opacity(0.2))
+                    Button{
+                        predictvalue = "1"
+                        boolState = false
+                        self.nowimage = UIImage()
+                    }label:{
+                        Text("Initialize")
+                            .font(.title)
+                            .foregroundColor(.white.opacity(0.8))
+                    }
+                    
                 }
                 .padding(.horizontal)
                 
