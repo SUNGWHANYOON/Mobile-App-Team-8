@@ -102,7 +102,7 @@ struct AIview: View {
                         boolState = false
                         self.nowimage = UIImage()
                     }label:{
-                        Text("Initialize")
+                        Text("Reset")
                             .font(.title)
                             .foregroundColor(.white.opacity(0.8))
                     }
