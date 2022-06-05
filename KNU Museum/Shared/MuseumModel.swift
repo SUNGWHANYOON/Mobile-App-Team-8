@@ -54,7 +54,11 @@ struct MuseumData {
                     mItem.updateValue(j, forKey: "info")
                 } else {
                     flag = true
+<<<<<<< HEAD
                     var temp = j.components(separatedBy: "/")
+=======
+                    let temp = j.components(separatedBy: "/")
+>>>>>>> 70068798763db9c64dc61a37dc0ec11e4fd703cd
                     mItem.updateValue(temp[0], forKey: "id")
                     mItem.updateValue(temp[1], forKey: "name")
                     mItem.updateValue(temp[2], forKey: "generation")

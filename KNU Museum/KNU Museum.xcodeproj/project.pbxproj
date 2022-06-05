@@ -21,10 +21,17 @@
 		177E2B832828C7170088B3CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E2B712828C7160088B3CB /* ContentView.swift */; };
 		177E2B842828C7170088B3CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177E2B722828C7170088B3CB /* Assets.xcassets */; };
 		177E2B852828C7170088B3CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177E2B722828C7170088B3CB /* Assets.xcassets */; };
+<<<<<<< HEAD
 		17D1E4382833FFB100837D97 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1E4372833FFB100837D97 /* UIImage+Extension.swift */; };
 		17D1E4392833FFB100837D97 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1E4372833FFB100837D97 /* UIImage+Extension.swift */; };
 		CB0E1E6D2840BB4B00BE6578 /* Classifier1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CB0E1E6C2840BB4A00BE6578 /* Classifier1.mlmodel */; };
 		CB0E1E6E2840BB4B00BE6578 /* Classifier1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CB0E1E6C2840BB4A00BE6578 /* Classifier1.mlmodel */; };
+=======
+		17CBFB90284CB5F900F46A97 /* Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 17CBFB8F284CB5F900F46A97 /* Classifier.mlmodel */; };
+		17CBFB91284CB5F900F46A97 /* Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 17CBFB8F284CB5F900F46A97 /* Classifier.mlmodel */; };
+		17D1E4382833FFB100837D97 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1E4372833FFB100837D97 /* UIImage+Extension.swift */; };
+		17D1E4392833FFB100837D97 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1E4372833FFB100837D97 /* UIImage+Extension.swift */; };
+>>>>>>> 70068798763db9c64dc61a37dc0ec11e4fd703cd
 		CB0E1E702840C16D00BE6578 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0E1E6F2840C16D00BE6578 /* MenuView.swift */; };
 		CB0E1E712840C16D00BE6578 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0E1E6F2840C16D00BE6578 /* MenuView.swift */; };
 		CB0E1E732840C18500BE6578 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0E1E722840C18500BE6578 /* InfoView.swift */; };
@@ -46,8 +53,13 @@
 		177E2B772828C7170088B3CB /* KNU Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KNU Museum.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177E2B7D2828C7170088B3CB /* KNU Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KNU Museum.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177E2B7F2828C7170088B3CB /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		17D1E4372833FFB100837D97 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		CB0E1E6C2840BB4A00BE6578 /* Classifier1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Classifier1.mlmodel; path = ../../../../Downloads/Classifier1.mlmodel; sourceTree = "<group>"; };
+=======
+		17CBFB8F284CB5F900F46A97 /* Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Classifier.mlmodel; sourceTree = "<group>"; };
+		17D1E4372833FFB100837D97 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+>>>>>>> 70068798763db9c64dc61a37dc0ec11e4fd703cd
 		CB0E1E6F2840C16D00BE6578 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		CB0E1E722840C18500BE6578 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		CB4A986128311DB100EC667D /* OpenGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGallery.swift; sourceTree = "<group>"; };
@@ -94,8 +106,13 @@
 				1738F4AE2830BE270054393D /* Detail.swift */,
 				1738F4A82830BD370054393D /* AIview.swift */,
 				17D1E4372833FFB100837D97 /* UIImage+Extension.swift */,
+<<<<<<< HEAD
 				177E2B722828C7170088B3CB /* Assets.xcassets */,
 				CB0E1E6C2840BB4A00BE6578 /* Classifier1.mlmodel */,
+=======
+				17CBFB8F284CB5F900F46A97 /* Classifier.mlmodel */,
+				177E2B722828C7170088B3CB /* Assets.xcassets */,
+>>>>>>> 70068798763db9c64dc61a37dc0ec11e4fd703cd
 				CBAA5108283E0D9700C56982 /* AIContentView.swift */,
 			);
 			path = Shared;
@@ -163,7 +180,11 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
+<<<<<<< HEAD
 				LastUpgradeCheck = 1330;
+=======
+				LastUpgradeCheck = 1340;
+>>>>>>> 70068798763db9c64dc61a37dc0ec11e4fd703cd
 				TargetAttributes = {
 					177E2B762828C7170088B3CB = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -218,12 +239,19 @@
 			files = (
 				1738F4A92830BD370054393D /* AIview.swift in Sources */,
 				177E2B822828C7170088B3CB /* ContentView.swift in Sources */,
+<<<<<<< HEAD
+=======
+				17CBFB90284CB5F900F46A97 /* Classifier.mlmodel in Sources */,
+>>>>>>> 70068798763db9c64dc61a37dc0ec11e4fd703cd
 				CBAA5109283E0D9700C56982 /* AIContentView.swift in Sources */,
 				1738F4AF2830BE270054393D /* Detail.swift in Sources */,
 				CB0E1E732840C18500BE6578 /* InfoView.swift in Sources */,
 				1738F4A62830A06F0054393D /* MuseumModel.swift in Sources */,
 				1738F4A028309F390054393D /* ViewModel.swift in Sources */,
+<<<<<<< HEAD
 				CB0E1E6D2840BB4B00BE6578 /* Classifier1.mlmodel in Sources */,
+=======
+>>>>>>> 70068798763db9c64dc61a37dc0ec11e4fd703cd
 				CB0E1E702840C16D00BE6578 /* MenuView.swift in Sources */,
 				CB4A986228311DB100EC667D /* OpenGallery.swift in Sources */,
 				17D1E4382833FFB100837D97 /* UIImage+Extension.swift in Sources */,
@@ -237,12 +265,19 @@
 			files = (
 				1738F4AA2830BD370054393D /* AIview.swift in Sources */,
 				177E2B832828C7170088B3CB /* ContentView.swift in Sources */,
+<<<<<<< HEAD
+=======
+				17CBFB91284CB5F900F46A97 /* Classifier.mlmodel in Sources */,
+>>>>>>> 70068798763db9c64dc61a37dc0ec11e4fd703cd
 				CBAA510A283E0D9700C56982 /* AIContentView.swift in Sources */,
 				1738F4B02830BE270054393D /* Detail.swift in Sources */,
 				CB0E1E742840C18500BE6578 /* InfoView.swift in Sources */,
 				1738F4A72830A06F0054393D /* MuseumModel.swift in Sources */,
 				1738F4A128309F390054393D /* ViewModel.swift in Sources */,
+<<<<<<< HEAD
 				CB0E1E6E2840BB4B00BE6578 /* Classifier1.mlmodel in Sources */,
+=======
+>>>>>>> 70068798763db9c64dc61a37dc0ec11e4fd703cd
 				CB0E1E712840C16D00BE6578 /* MenuView.swift in Sources */,
 				CB4A986328311DB100EC667D /* OpenGallery.swift in Sources */,
 				17D1E4392833FFB100837D97 /* UIImage+Extension.swift in Sources */,
@@ -431,6 +466,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+<<<<<<< HEAD
+=======
+				CODE_SIGN_IDENTITY = "-";
+>>>>>>> 70068798763db9c64dc61a37dc0ec11e4fd703cd
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -457,6 +496,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+<<<<<<< HEAD
+=======
+				CODE_SIGN_IDENTITY = "-";
+>>>>>>> 70068798763db9c64dc61a37dc0ec11e4fd703cd
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
