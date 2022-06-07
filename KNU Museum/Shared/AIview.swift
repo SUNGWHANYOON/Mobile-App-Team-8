@@ -35,6 +35,7 @@ struct AIview: View {
                                 .font(.title)
                                 .foregroundColor(.white)
                                 .padding(.horizontal)
+                                .padding(.vertical)
                         }
                         Spacer()
                         Spacer()
@@ -44,11 +45,13 @@ struct AIview: View {
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
+                            .padding(.vertical)
                     } else {
                         Text("AI 예측")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
+                            .padding(.vertical)
                     }
                     
                 }

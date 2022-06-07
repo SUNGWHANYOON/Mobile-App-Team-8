@@ -24,7 +24,7 @@ struct MenuView: View {
 //                            Text("볼 수 있어야합니다")
 //                        }
 //                    }
-//                    .padding(.top, 120)
+                    
                     
                     Link(destination: URL(string: "https://museum.knu.ac.kr/")!){
                         Image(systemName: "house")
@@ -35,9 +35,9 @@ struct MenuView: View {
                         }
                         
                     }
-                    .padding(.top, 30)
-                    .foregroundColor(.white)
-                    
+                    .padding(.top, 120)
+                    .foregroundColor(Color("Color5"))
+                                        
                     Link(destination: URL(string: "https://www.facebook.com/knumuseum")!){
                         Image(systemName: "hand.thumbsup.fill")
                         if english {
@@ -47,7 +47,9 @@ struct MenuView: View {
                         }
                     }
                     .padding(.top, 30)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("Color5"))
+
+                    
                     
                     Link(destination: URL(string: "https://www.instagram.com/knu_museum/")!){
                         Image(systemName: "heart.fill")
@@ -58,7 +60,9 @@ struct MenuView: View {
                         }
                     }
                     .padding(.top, 30)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("Color5"))
+
+                    
                     
                     ZStack{
                         HStack{
@@ -69,10 +73,12 @@ struct MenuView: View {
                             }label:{
                                 if english{
                                     Text("Information")
-                                        .foregroundColor(.white)
+                                        .foregroundColor(Color("Color5"))
+
                                 } else {
                                     Text("정보")
-                                        .foregroundColor(.white)
+                                        .foregroundColor(Color("Color5"))
+
                                 }
                         }
                         }

@@ -69,9 +69,9 @@ struct Detail: View {
                     .padding(.top)
                 
                 Text(self.data.einfo)
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.leading)
                     .foregroundColor(.white)
-                    .padding(.top)
+                    .padding([.top, .horizontal], 20)
                 
             } else {
                 Text(self.data.name)
@@ -81,10 +81,11 @@ struct Detail: View {
                     .foregroundColor(.white)
                     .padding(.top)
                 
+                
                 Text(self.data.info)
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.leading)
                     .foregroundColor(.white)
-                    .padding(.top)
+                    .padding([.top, .horizontal], 15)
                 
             }
             
