@@ -16,34 +16,42 @@ struct MuseumModel {
         var info: String
         var generation: String
         var relic_no: String
+        var ename: String
+        var einfo: String
+        var eng: Bool
     }
     
     static var mdata = MuseumData()
+    static var emdata = MuseumData()
+    
     
     //12, 10, 14, 17, 29, 9, 16, 35, 15, 28
     var data = [
-        Object(id: 1, image: "Image1", name: mdata.relics[11]["name"] as! String, info: mdata.relics[11]["info"] as! String, generation: mdata.relics[11]["generation"] as! String, relic_no: mdata.relics[11]["relicNo"] as! String),
-        Object(id: 2, image: "Image2", name: mdata.relics[9]["name"] as! String, info: mdata.relics[9]["info"] as! String, generation: mdata.relics[9]["generation"] as! String, relic_no: mdata.relics[9]["relicNo"] as! String),
-        Object(id: 3, image: "Image3", name: mdata.relics[13]["name"] as! String, info: mdata.relics[13]["info"] as! String, generation: mdata.relics[13]["generation"] as! String, relic_no: mdata.relics[13]["relicNo"] as! String),
-        Object(id: 4, image: "Image4", name: mdata.relics[16]["name"] as! String, info: mdata.relics[16]["info"] as! String, generation: mdata.relics[16]["generation"] as! String, relic_no: mdata.relics[16]["relicNo"] as! String),
-        Object(id: 5, image: "Image5", name: mdata.relics[28]["name"] as! String, info: mdata.relics[28]["info"] as! String, generation: mdata.relics[28]["generation"] as! String, relic_no: mdata.relics[28]["relicNo"] as! String),
-        Object(id: 6, image: "Image6", name: mdata.relics[8]["name"] as! String, info: mdata.relics[8]["info"] as! String, generation: mdata.relics[8]["generation"] as! String, relic_no: mdata.relics[8]["relicNo"] as! String),
-        Object(id: 7, image: "Image7", name: mdata.relics[15]["name"] as! String, info: mdata.relics[15]["info"] as! String, generation: mdata.relics[15]["generation"] as! String, relic_no: mdata.relics[15]["relicNo"] as! String),
-        Object(id: 8, image: "Image8", name: mdata.relics[34]["name"] as! String, info: mdata.relics[34]["info"] as! String, generation: mdata.relics[34]["generation"] as! String, relic_no: mdata.relics[34]["relicNo"] as! String),
-        Object(id: 9, image: "Image9", name: mdata.relics[14]["name"] as! String, info: mdata.relics[14]["info"] as! String, generation: mdata.relics[14]["generation"] as! String, relic_no: mdata.relics[14]["relicNo"] as! String),
-        Object(id: 10, image: "Image10", name: mdata.relics[27]["name"] as! String, info: mdata.relics[27]["info"] as! String, generation: mdata.relics[27]["generation"] as! String, relic_no: mdata.relics[27]["relicNo"] as! String),
+        Object(id: 1, image: "Image1", name: mdata.relics[11]["name"] as! String, info: mdata.relics[11]["info"] as! String, generation: mdata.relics[11]["generation"] as! String, relic_no: mdata.relics[11]["relicNo"] as! String, ename: emdata.erelics[11]["name"] as! String, einfo: emdata.erelics[11]["info"] as! String, eng: false),
+        Object(id: 2, image: "Image2", name: mdata.relics[9]["name"] as! String, info: mdata.relics[9]["info"] as! String, generation: mdata.relics[9]["generation"] as! String, relic_no: mdata.relics[9]["relicNo"] as! String, ename: emdata.erelics[9]["name"] as! String, einfo: emdata.erelics[9]["info"] as! String, eng: false),
+        Object(id: 3, image: "Image3", name: mdata.relics[13]["name"] as! String, info: mdata.relics[13]["info"] as! String, generation: mdata.relics[13]["generation"] as! String, relic_no: mdata.relics[13]["relicNo"] as! String, ename: emdata.erelics[13]["name"] as! String, einfo: emdata.erelics[13]["info"] as! String, eng: false),
+        Object(id: 4, image: "Image4", name: mdata.relics[16]["name"] as! String, info: mdata.relics[16]["info"] as! String, generation: mdata.relics[16]["generation"] as! String, relic_no: mdata.relics[16]["relicNo"] as! String, ename: emdata.erelics[16]["name"] as! String, einfo: emdata.erelics[16]["info"] as! String, eng: false),
+        Object(id: 5, image: "Image5", name: mdata.relics[28]["name"] as! String, info: mdata.relics[28]["info"] as! String, generation: mdata.relics[28]["generation"] as! String, relic_no: mdata.relics[28]["relicNo"] as! String, ename: emdata.erelics[28]["name"] as! String, einfo: emdata.erelics[28]["info"] as! String, eng: false),
+        Object(id: 6, image: "Image6", name: mdata.relics[8]["name"] as! String, info: mdata.relics[8]["info"] as! String, generation: mdata.relics[8]["generation"] as! String, relic_no: mdata.relics[8]["relicNo"] as! String, ename: emdata.erelics[8]["name"] as! String, einfo: emdata.erelics[8]["info"] as! String, eng: false),
+        Object(id: 7, image: "Image7", name: mdata.relics[15]["name"] as! String, info: mdata.relics[15]["info"] as! String, generation: mdata.relics[15]["generation"] as! String, relic_no: mdata.relics[15]["relicNo"] as! String, ename: emdata.erelics[15]["name"] as! String, einfo: emdata.erelics[15]["info"] as! String, eng: false),
+        Object(id: 8, image: "Image8", name: mdata.relics[34]["name"] as! String, info: mdata.relics[34]["info"] as! String, generation: mdata.relics[34]["generation"] as! String, relic_no: mdata.relics[34]["relicNo"] as! String, ename: emdata.erelics[34]["name"] as! String, einfo: emdata.erelics[34]["info"] as! String, eng: false),
+        Object(id: 9, image: "Image9", name: mdata.relics[14]["name"] as! String, info: mdata.relics[14]["info"] as! String, generation: mdata.relics[14]["generation"] as! String, relic_no: mdata.relics[14]["relicNo"] as! String, ename: emdata.erelics[14]["name"] as! String, einfo: emdata.erelics[14]["info"] as! String, eng: false),
+        Object(id: 10, image: "Image10", name: mdata.relics[27]["name"] as! String, info: mdata.relics[27]["info"] as! String, generation: mdata.relics[27]["generation"] as! String, relic_no: mdata.relics[27]["relicNo"] as! String, ename: emdata.erelics[27]["name"] as! String, einfo: emdata.erelics[27]["info"] as! String, eng: false),
     ]
 
 }
 
 struct MuseumData {
     static var datalist:Array = mData.components(separatedBy: "\n\n")
-    
-    //var datasplit:Array = datastring.split(separator: "\n", omittingEmptySubsequences: true)
-    //datasplit.count
 
     var mItem = Dictionary<String,Any>()
     var relics : Array = [Dictionary<String, Any>]()
+    
+    
+    static var edatalist: Array = emData.components(separatedBy: "\n\n")
+
+    var emItem = Dictionary<String,Any>()
+    var erelics : Array = [Dictionary<String, Any>]()
 
     init() {
         for i in 0..<MuseumData.datalist.count {
@@ -63,12 +71,28 @@ struct MuseumData {
                     } else {
                         mItem.updateValue("", forKey: "relicNo")
                     }
+                    
                 }
             }
             relics.append(mItem)
         }
+
+        for i in 0..<MuseumData.edatalist.count {
+            var flag = false
+            for j in MuseumData.edatalist[i].components(separatedBy: "\n"){
+                if (flag) {
+                    flag = false
+                    emItem.updateValue(j, forKey: "info")
+                } else {
+                    flag = true
+                    let temp = j.components(separatedBy: "/")
+                    emItem.updateValue(temp[0], forKey: "id")
+                    emItem.updateValue(temp[1], forKey: "name")
+                }
+            }
+            erelics.append(emItem)
+        }
     }
-    
 }
 
 
@@ -186,4 +210,118 @@ let mData = """
 
 37/맷돌/조선
 곡물을 갈아서 가루로 만드는 용구이다.
+"""
+
+
+let emData = """
+1/Daegu Martial Arts Myeongjakbi/Samguk (Silla)/Treasure No. 516
+It is a monument to the construction of a reservoir in Yeongdong-ri Village in the Year of the Martial Arts of Unified Silla, and is a valuable historical material for the repair work of Silla around 6C. Regarding construction relations and human life, it is listed in the order of occupation, birthplace, person, and official, and the number of people mobilized for the construction is 312. The size of the embankment is 20 steps in width, 5 steps in height, 4 feet in length, and 50 steps in length, and the life of the person who built the inscription is recorded. 103 cm in height
+
+2/12 Deterioration Box/Unification Silla
+It is a stone coffin in the shape of a house from the Unified Silla period excavated in Jinhae, Gyeongsangnam-do, and the lid is in the form of a gabled roof and a half-sitting twelve-figure statue is carved around the lower body. During this period, when a monk dies, it is common to bury him, bury him, collect his bones, and put them in the sarcophagus, which seems to have played such a role. 45cm in height
+
+3/Four Heavenly Kings/Unification Silla
+Originating from India's pharmacist, it was initially expressed as an armored kidney, but gradually changed to wearing a cloth around Banra's body and raising his arms to emphasize its vigorous strength. In Korea, many paintings and sculptures remain as illegal guardians at the entrance of temples or Buddhist temples and at the doors of stone pagodas. 73cm in height
+
+4/Stone Vairocana Buddha statue/Unification Silla/Treasure No. 335
+Small conch-shaped hair is attached to the head, and the face is larger and round compared to the body. The face of this Buddha statue is full and features a smile on the eyes and mouth. The clothes are thickly wrapped around both shoulders, and the folds of the clothes are formalized. The shoulders are narrow, so the body is remarkably dwarfed, and both feet are placed on the knees and the soles of the feet are sitting in a position facing the sky. The hand is wrapped around the index finger of the left hand with the right hand, which is the general shape of the hand taken by Vairocana Buddha. The halo is expressed very large compared to the Buddha statue, and five small Buddhas are carved together, and the flame pattern is delicately expressed on the edge. The octagonal pedestal where the Buddha statue sits is engraved with colorful flower patterns and animal statues, but it is very formal. It is a work that shows the general characteristics of Vairocana Buddha in the late Unified Silla period and seems to have been made around the same time as the Stone Vairocana Buddha (Treasure No. 244) of Donghwasa Temple, which was made in the 3rd year of King Gyeongmun of Silla (863). 275 cm in height
+
+5/Stone Guardian/Joseon
+It is a kind of guardian deity that was erected in the village or temple's wild head or hill by trimming stones and making them into human-shaped figures. The villagers also regarded it as an object of faith to hold ancestral rites or worship. A natural stone was carved to separate the face from the body. The head is decorated with a four-sided hat, and the eyes are deeply engraved and protruded. The nose is long and narrow, and the mouth expressed in intaglio has a smile. The arms of the body are joined up and down, and the lower part is carved to be inserted. 80 cm in height
+
+6/The Buddha Triad/Unification Silla
+Samjonsang is a late Unified Silla work with relatively excellent expression style, with the left and right Hyupsi Bodhisattva riding a lion and an elephant. The main statue is similar to and more refined than the typical Vairocana Buddha statue after the mid-9th century in its elegant body, the injustice of parallel stair-style folds, the collection of land rights in its chest, and detailed expressions.
+
+7/Bonghwa Bukji Stone Side Dish Box/Unified Silla/Treasure No. 997
+The upper body is broken and disappeared, and only the round lotus-patterned footrest made separately from the lower body remains, but it is considered the largest half statue in Korea with its bold and realistic carving technique. The right leg placed on the left knee is very large and emphasized by raising the knee high. Under the raised bridge, there are three layers of folds of clothes flowing smoothly. Next to them is a large square ring and colorful bead decoration. The footrest is a disk of about 70cm and has seven downward lotus leaves engraved. It is considered to be a work of the mid seventh century. 160 cm in height
+
+8/Stone Vairocana Buddha statue/Unification Silla
+It is made of sandstone, and consists of a pedestal carved with one stone and a pedestal and a mistrust. The head of the Buddha statue is a bellflower that embodies the shape of hair being rolled up to the right like a conch, and the top of the head is a hump-like flesh. The face is soft and smooth, with thick eyes and a smile on the corner of the mouth, which seems to show the inner world full of joy. The folds of the clothes are simple, and although the hands are damaged, it is clear that the local authority is holding the index finger of the right hand with the left hand. Yeonhwamun Gate is engraved on the lower and upper stones of the pedestal, and the eight-sided middle statues are engraved on the octagonal middle stones. 196 cm in height
+
+9/Daegu Sangyeok-dong Yeonhwa Unryong Style Seungtap/Goryeo/Treasure No. 135
+It follows the basic style of octagonal Wondang of the Silla Dynasty, and shows the characteristics of the Goryeo Dynasty well in the square lower pedestal and middle stone. In particular, the dragons and clouds embossed in the middle stone show a heroic technique. Compared to the pagoda body or roof, the base part is vast, so there is less cheerful feeling, but rather a stable and majestic feeling. What was kept in a private house in Daegu was moved here. The material is granite. 274 cm in height
+
+10/Daegu Sangyeok-dong Lion Rock Decorated Seungtap/Goryeo/Treasure No. 258
+It is a typical pagoda of the Goryeo Dynasty that shows the octagonal Wondang-shaped style. The base on the square-shaped stone is composed of upper, middle, and lower stones. Some parts of the roof are damaged, and although the upstream is not complete, the sculptures of each part are magnificent and excellent, and the vertical proportions are well matched. In particular, the cloud-patterned sculptures of Ansang and Ha Daeseok show the characteristics of the times. The material is granite. 247 cm in height
+
+11/Three-story Stone Pagoda/Korea
+This stone pagoda, consisting of a two-story upper and lower base and a three-story pagoda body on a surface stone, is relatively simple and simple. Both the pagoda body and the stylobate are embossed with the corner pillar, the universe, and the central pillar, the tangju. In particular, the lower stylobate is engraved with an ornamental statue modeled after the shape of an elephant's eye, and a flower pattern is placed in the center. 228 cm in height
+
+12/Inheungsa Temple Site Three-story Stone Pagoda/Unification Silla
+It was moved from the place presumed to be Inheungsa Temple Site and restored. The stone pagoda has four soft-shaped eyes engraved on each side of the upper and upper pedestal of each side of the stone pagoda. Naksu-myeon has a rather steep slope, and the end of the Chuyeo is lightly reversed to show a cheerful appearance. On the upper part of the roof stone on the third floor, there is a circular sari hole with a diameter of about 10 cm and a T-shaped upper ring fixing hole. 410 cm in height
+
+13/Straight Tank/Joseon
+It is a water bottle made of stone.
+
+14/Stone Tower/Unification Silla
+It is made of sandstone and consists of one pagoda body and two roof stones without a base on a square ground stone. The Four Heavenly Kings are enshrined in the center of the slope of the pagoda body, and each roof stone is engraved with a four-tiered roof support for each roof stone. 128 cm in height
+
+15/Seokdeung/Unification Silla
+It is a registration made to light the temple grounds, tombs, and gardens. The granite part, which lights up with only the lower structure of the stone lantern remaining, and the roof stone, which acts as a roof, were lost.
+
+16/Stone Seated Buddha/Unification Silla
+It is made of granite, and the head is slightly bent forward, and the hands are overlapped on the knees and meditated. The clothes were covered from arms to knees. On a large square pedestal, it was carved in a shallow chamber. In Soseung Buddhism, Nahan means a person who is at the highest stage of ascension, and in Daeseung Buddhism, a saint who has achieved the best enlightenment, and is tasked with protecting the Buddha's law and saving the public. It was introduced in Korea from the late Three Kingdoms period and was very popular during the Goryeo Dynasty. The excavation site is Gyeongju. 76 cm in height
+
+17/Seated Buddha/Unified Silla
+It is a Buddha statue that expresses the lotus pedestal, mistrust, and halo by engraving relief on one side of the stone. On the top of the head, there is a lump-like flesh and hair is not expressed separately. The clothes are tonggyeon that covers both shoulders, and the belt knot of the clothes is visible on the chest. Under the neck is surrounded by three folds. The legs are a position of sitting with two feet on the opposite thigh, with the soles of the feet facing up. The hand is an anti-magazine that lowers the right hand under the right knee and points five fingers to the ground to subdue the devil. 142 cm in height
+
+18/Chilgok Yakmok Tombs/Three Kingdoms
+The animal had a feeling about it in 1960. 21m, 1~5m, Hoseok is spinning. Until now, the 1st store has a wall-mounted wall and has minced and flat steel stones, and the next burial is covered with flagstones. This stone wall measures 5.8 m 1.3 m in length and 1.4 m in girth. They didn't arrive in the remote area, they were kicked out by the southern wall and came there, and they were chased away by the southern wall and came there), and the two places that were kicked out right there were kicked out. kicked out The exhibited artifacts are in one exhibition room.
+
+19/Chokhwabi/Joseon
+After Byeonginyangyo in 1866 and Sinmiyangyo in 1871, Heungseon Daewongun erected a monument to the country, including Seoul, in April 1871 to strengthen the determination to isolate the country and to warn the people against foreign invasions. On the surface of the tombstone, the inscription “洋夷侵犯non-warning則和主和賣國 (Western barbarians invade, let us reconcile if we do not fight; insisting on reconciliation is to sell the country)” is engraved in large letters and “戒俄萬年子孫丙寅”作 辛未立 (I warn our descendants of all generations. Built in the year of Byeongin and erected in the year of Shinmi)” was engraved in small letters.
+
+20/The Unified Silla and umuldol
+Stone over to the top of the well umuldol. A speed higher than a square circle round made the center. The wooden Cover is estimated that he was not to go into the well.
+
+21/Foundation Stone/Unification Silla
+It is also called the foundation stone as the foundation stone of the building. It serves to transfer the load coming down through the pillar to the ground.
+
+22/Mojeon Stone Pagoda/Unification Silla
+It was built in the style of a tower using stone. This Mojeon Stone Pagoda is not built by processing stones into bricks, but stone pagoda and roof stone are stacked like a stone pagoda, and the left and right universes are omitted from the pagoda stone and the roof stone falls are marked with layers like a front tower. 190cm in height
+
+23/Tower/Joseon
+It is a pagoda with an octagonal base stone placed on top of the octagonal pedestal, a roof stone placed on top of it, and an upper stream. The pedestal has double lotus on its upper surface, and on one side of the stylobate, it is vertically engraved as Byeokheodang. The roof stone is carved with lotus flowers on the bottom. The falling water surface of Okgaeseok is somewhat steep, and the end of the Chuyeo is lightly reversed and climbed. The upper ring was carved with jewels on the pedestal. 182 cm in height
+
+24/Jonghyeong Tower/Joseon
+The Seokjong-type Seungtap was built with octagonal Wondang-type Seungtap during the Unified Silla Period, and it was especially developed during the Joseon Dynasty after the late Goryeo Dynasty. It is common to build a bell-shaped pagoda body on a square pedestal and place a stupa engraved with jewels at the top, but the pedestal and jewels are now lost.
+
+25/Stone Returned Singer/Joseon
+Isu is a stone that decorates the head of a tombstone. The eyes are hemispherical and the nose occupies a wide position in the center. Large teeth are exposed with a wide opening of the mouth, and whiskers and hair are widely carved on both cheeks. This statue serves as a pyeoksa to protect against evil spirits. 50cm in height
+
+26/Seokjoryong Lee Soo/Joseon
+The dragon pattern was carved against the backdrop of clouds. The two dragons are facing each other and biting a female pearl. The scales and horns of the dragon are realistically carved. It is the headstone of the tombstone decorated with the shape of a dragon to start the Royal Tomb of King Taejong Muyeol of Silla. 58 cm in height
+
+27/2020 Power cut-off wood ratio/Joseon
+The front and back two sides are unique stone monuments written for different purposes, and the front is the Munchjeolmokbi, and the back is the Monument to the Merit of Yi Bang Jeong Geon-hak. This monument lists measures to prevent the recurrence of such evil practices and normalize the station system by case in the Joseon Dynasty, as a bad habit of money flowing to the private sector was caught by secret agents in connection with the taste that was entrusted to raise horses for government affairs. It seems to have been built around 1762 or 1822 based on the marking of Imo in the text, and it seems to have been recycled as a tribute to Yi Bang at the end of the 19th century.
+
+28/Daegu Seokbingobi/Joseon
+This monument was erected to commemorate the completion of the Daegu Seokbinggo from 1713 to 1716, and to commemorate the achievements of the famous music of the magistrate. The body of the monument is purple and has a rectangular shape with a rounded top. Seokbinggo is an ice warehouse that was cut off and stored by the river in winter and prevented solar and direct sunlight from entering so that the ice can be taken out and used again in summer. There are currently six Seokbinggo left in the 18th century, and it is mainly distributed in Gyeongsang-do, including Gyeongju and Changnyeong. Its original location is the northern slope of Amisan Mountain (now Banwoldang). 185 cm in height
+
+29/Seokin/Joseon
+Seokin is one of the stones erected in front of the tomb. There are literary figures in the shape of civil servants and unmanned figures in the shape of military officers. Stone figures are placed in tombs to symbolize the protection of tombs and the authority of those in power. In China, it started from the Junhan period and in Korea, the tradition continues from the Unified Silla period to the present. The stone seal in Wolpawon is from the Joseon Dynasty, and it can be seen that it develops into a square mold with a majestic effect, characterized by a large head and large ears.
+
+30/Shipbuilding/Joseon
+It is a form of Songdeokbi Monument built to commemorate the virtue of the official who gave the selection. When Song Deok-bi was in government office and gave grace and edification, the people built a monument in honor of it. However, there are examples of people threatening the people or forcing the construction of Songdeokbi at the expense of the government officials themselves. In Wolpawon, there are eight Joseon Dynasty monuments, including the Monument to Master of Pankwan Myeongseongak, Cheongdeok Aeminseon Maintenance of Pankwan Myeongseongak, the Monument to Punkwan Myeongseongak, the Monument to Punkwan Kim Ki-hyun, the Monument to Rightbok Jeong Gyeong-hak, and the Monument to Merit.
+
+31/Daegu Icheon-dong Dolmen/Bronze Age
+It is part of Jiseokmyo-gun in the 4th district of Daebong-dong, which was investigated during the Japanese colonial period, and the museum of this school conducted two re-excavation surveys in 1990 and 1993. Currently restored are dolmens I and III in District 4. Five stone pavilions and sarcophagus are arranged in a 자 shape with one upper stone at the center, and a square graveyard was made by laying steel around it. The stonewall No. IV built in the center is the largest with a length of 227cm, a width of 55cm, and a depth of 75cm. Dolmen No. III are placed on top of four pedestal stones with a weight of 40 tons, and two stone walls and a stone coffin made of one plate stone are built around them. As relics, Maje stone swords, Maje stone chisels, government offices, and Hongdo were excavated.
+
+32/Daegu Sangin-dong Dolmen/Bronze Age
+In 1992, the dolmen in Sangin-dong, which was excavated and investigated by the museum of this school, was relocated and restored. The dolmen in Sangin-dong were built by stacking steel stones to make rectangular stone tombs, and then a square graveyard of 3.5m to 5m on one side was built by laying steel stones around it. In the northeast-southwest direction, five stone tombs were built connecting the graveyard, and two more stone tombs were built near the southeast. The largest cover stone weighs 21 tons, and the rest is about 3 to 5 tons. These dolmen cover stones were used as lid stones on top of stone mound tombs or placed in the center of several stone mound tombs to mark tombs. Many artifacts such as stone knives, stone arrowheads, red clay pottery, and curved jade made of Cheonha stone were excavated around these dolmens and cover stones, and are displayed in the first exhibition hall.
+
+33/Daegu Seojae-ri earthenware kiln/Unified Silla
+In 2004, the first kiln out of two earthenware kilns at the western foot of Waryongsan Mountain, which was excavated and investigated by the (re) Yeongnam Cultural Heritage Research Institute, was relocated and restored. The kiln has a semi-underground structure, and it has been identified that the kiln is baked with earthenware, the flue part from which smoke escapes, and the ash and earthenware were discarded at the bottom. In addition, a drain around the kiln was identified. In the kiln, most of the household earthenware such as short wooden pots and bowls were excavated in a carved state. Since most of the pottery is made of Inhwamun, it can be seen that these kilns were used in the late 7th and early 8th centuries. Pottery similar to the pottery excavated from this earthenware kiln is displayed in the second exhibition hall.
+
+34/Sunset[Direct Translation]/Joseon
+Literary seats, unmanned seats, a seat for the military, a seat for the upper classIt is one of the stone structures placed around the tomb, such as Mangjuseok and Seokho. It was built from the Jeonhan period in China, and during the Joseon Dynasty, it was built around the tombs of kings and queens and in front of the tombs of the four masters to protect the cemetery.
+
+35/Neckless Buddha/Unified Silla
+These are seated Buddha statues from the Unified Silla Period. The absence of all the necks of the Buddha may have been damaged for various reasons such as invasion of foreign enemies, the policy of Soongyueokbul, and the replacement of the Buddha, but it is also because the neck of the Buddha is the weakest of each part and is easy to lose. The neckless Buddha statue is not a complete appearance, but it is a great work of art that reflects our history as it is.
+
+36/Yeonja Mammoth/Joseon
+It is a mill that threshes or mills grains. On a round, plate-shaped stone plate, a smaller, round stone is placed on the side, and Maso drags and turns it.
+
+37/Millstone/Joseon
+It is a tool that grinds grain into powder.
 """

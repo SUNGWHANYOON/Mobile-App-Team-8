@@ -9,6 +9,9 @@ import SwiftUI
 import MapKit
 
 struct InfoView: View {
+    
+    var english: Bool
+    
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 35.88866600507044, longitude: 128.6138348995155),
         span: MKCoordinateSpan(latitudeDelta: 0.0015, longitudeDelta: 0.0015))
@@ -17,10 +20,16 @@ struct InfoView: View {
         NavigationView{
         GeometryReader { geometry in
             VStack {
-              
-                Text("Information")
-                    .font(.title)
-                    .bold()
+                if english {
+                    Text("Information")
+                        .font(.title)
+                        .bold()
+                } else {
+                    Text("정보")
+                        .font(.title)
+                        .bold()
+                }
+                
             
                 ScrollView(.vertical, showsIndicators: false) {
                     Image("Museum")
@@ -38,55 +47,112 @@ struct InfoView: View {
                     
                     VStack(alignment: .leading) {
                         HStack(alignment: .top) {
-                            Text("개관일")
-                                .font(.subheadline)
-                                .bold()
-                            Spacer()
-                            Text("월요일 ~ 토요일")
-                                .font(.subheadline)
+                            if english {
+                                Text("Open")
+                                    .font(.subheadline)
+                                    .bold()
+                                Spacer()
+                                Text("Mon ~ Sat")
+                                    .font(.subheadline)
+                            } else {
+                                Text("개관일")
+                                    .font(.subheadline)
+                                    .bold()
+                                Spacer()
+                                Text("월요일 ~ 토요일")
+                                    .font(.subheadline)
+                            }
+
                         }.padding()
                         HStack(alignment: .top) {
-                            Text("휴관일")
-                                .foregroundColor(.red)
-                                .font(.subheadline)
-                                .bold()
-                            Spacer()
-                            Text("일요일, 공휴일")
-                                .font(.subheadline)
+                            if english {
+                                Text("Closed")
+                                    .foregroundColor(.red)
+                                    .font(.subheadline)
+                                    .bold()
+                                Spacer()
+                                Text("Sun, Public Holidays")
+                                    .font(.subheadline)
+                            } else {
+                                Text("휴관일")
+                                    .foregroundColor(.red)
+                                    .font(.subheadline)
+                                    .bold()
+                                Spacer()
+                                Text("일요일, 공휴일")
+                                    .font(.subheadline)
+                            }
+                            
                         }.padding()
                         HStack(alignment: .top) {
-                            Text("개관시간")
-                                .font(.subheadline)
-                                .bold()
-                            Spacer()
-                            Text("10:00 ~ 17:00(16시 30분까지 입장)")
-                                .font(.subheadline)
+                            if english {
+                                Text("Opening Hours")
+                                    .font(.subheadline)
+                                    .bold()
+                                Spacer()
+                                Text("10:00 ~ 17:00(Last Entry: 16:30)")
+                                    .font(.subheadline)
+                            } else {
+                                Text("개관시간")
+                                    .font(.subheadline)
+                                    .bold()
+                                Spacer()
+                                Text("10:00 ~ 17:00(16시 30분까지 입장)")
+                                    .font(.subheadline)
+                            }
+                            
                         }.padding()
                         HStack(alignment: .top) {
-                            Text("입장료")
-                                .font(.subheadline)
-                                .bold()
-                            Spacer()
-                            Text("무료")
-                                .font(.subheadline)
+                            if english {
+                                Text("Admission Fee")
+                                    .font(.subheadline)
+                                    .bold()
+                                Spacer()
+                                Text("Free")
+                                    .font(.subheadline)
+                            } else {
+                                Text("입장료")
+                                    .font(.subheadline)
+                                    .bold()
+                                Spacer()
+                                Text("무료")
+                                    .font(.subheadline)
+                            }
                         }.padding()
                         HStack(alignment: .top) {
-                            Text("연락처")
-                                .font(.subheadline)
-                                .bold()
+                            if english {
+                                Text("Contact")
+                                    .font(.subheadline)
+                                    .bold()
+                            } else {
+                                Text("연락처")
+                                    .font(.subheadline)
+                                    .bold()
+                            }
                             Spacer()
                             Text("053-950-6537")
                                 .font(.subheadline)
                         }.padding()
                         HStack(alignment: .top) {
-                            Text("주소")
-                                .font(.subheadline)
-                                .bold()
+                            if english {
+                                Text("Address")
+                                    .font(.subheadline)
+                                    .bold()
+                            } else {
+                                Text("주소")
+                                    .font(.subheadline)
+                                    .bold()
+                            }
                             Spacer()
                             VStack(alignment: .trailing){
-                                Text("대구광역시 북구 대학로 80")
-    //                                .multilineTextAlignment(.trailing)
-                                    .font(.subheadline)
+                                if english{
+                                    Text("80 Daehak-ro, Buk-gu, Daegu")
+                                        .font(.subheadline)
+                                } else {
+                                    Text("대구광역시 북구 대학로 80")
+                                        .font(.subheadline)
+                                }
+                                
                                 Spacer(minLength: 20)
                                
                             }
@@ -116,6 +182,6 @@ struct InfoView: View {
 
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoView()
+        InfoView(english: false)
     }
 }
