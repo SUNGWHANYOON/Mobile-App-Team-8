@@ -13,6 +13,8 @@ struct ContentView: View {
     
     @State var isLoading: Bool = false
     @State var showMenu = false
+    @State var english = false
+
 
     var body: some View {
         return GeometryReader { geometry in
@@ -22,7 +24,7 @@ struct ContentView: View {
                 }
                 
                 NavigationView {
-                    Home(data: objectContent, showMenu: self.$showMenu)
+                    Home(data: objectContent, showMenu: self.$showMenu, english: self.$english)
                         .navigationBarTitle("", displayMode: .inline)
                         .navigationBarHidden(true)
                         .navigationBarBackButtonHidden(true)
@@ -33,9 +35,8 @@ struct ContentView: View {
                 .zIndex(0)
                 
                 if self.showMenu {
-                    MenuView()
+                    MenuView(english: self.english)
                         .frame(width: geometry.size.width/2)
-                        .transition(.move(edge: .leading))
                 }
 
             }
@@ -50,6 +51,7 @@ struct ContentView: View {
 struct Home: View {
     let data: ViewModel
     @Binding var showMenu: Bool
+    @Binding var english: Bool
     
     var body: some View {
         VStack{
@@ -66,17 +68,35 @@ struct Home: View {
                 
                 Spacer()
                 
-                Text("KNU Museum")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                
-                Spacer()
-                NavigationLink(destination: AIview(data: self.data)){
-                    Image(systemName: "desktopcomputer")
+                if english {
+                    Text("KNU Museum")
                         .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                } else {
+                    Text("KNU 박물관")
+                        .font(.title)
+                        .fontWeight(.bold)
                         .foregroundColor(.white)
                 }
+
+                Spacer()
+                Button {
+                    self.english.toggle()
+                } label: {
+                    Image(systemName: "bubble.left.and.bubble.right")
+                        .font(.title2)
+                        .foregroundColor(.white)
+                }
+                
+                NavigationLink(destination: AIview(data: self.data, english: self.english)){
+                    Image(systemName: "desktopcomputer")
+                        .font(.title2)
+                        .foregroundColor(.white)
+                }
+                
+                
+
             }
             .padding(.horizontal)
             .padding(.top)
@@ -84,7 +104,7 @@ struct Home: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 40){
                     ForEach(data.objects){ i in
-                        Card(data: i)
+                        Card(data: i, eng: english)
                     }
                 }
             }
@@ -99,6 +119,7 @@ struct Home: View {
 struct Card: View {
     
     var data: ViewModel.Object
+    var eng: Bool
     
     var body: some View {
         HStack{
@@ -109,25 +130,41 @@ struct Card: View {
             
             Spacer()
             
-            VStack(spacing: 20){
+            VStack(spacing: 5){
                 Spacer(minLength: 0)
                 
-                
-                Text(self.data.name)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white.opacity(0.8))
+                if eng {
+                    Text(self.data.ename)
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white.opacity(0.8))
+                } else {
+                    Text(self.data.name)
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white.opacity(0.8))
+                }
 
                 Spacer()
                 
-                NavigationLink(destination: Detail(data: self.data)) {
-                    Text("See Details")
-                        .font(.callout)
-                        .fontWeight(.medium)
-                        .foregroundColor(.white.opacity(0.8))
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 10)
-                        .background(Capsule().stroke(.white.opacity(0.8), lineWidth: 2))
+                NavigationLink(destination: Detail(data: self.data, english: self.eng)) {
+                    if eng {
+                        Text("See Details")
+                            .font(.callout)
+                            .fontWeight(.medium)
+                            .foregroundColor(.white.opacity(0.8))
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 10)
+                            .background(Capsule().stroke(.white.opacity(0.8), lineWidth: 2))
+                    } else {
+                        Text("추가 정보")
+                            .font(.callout)
+                            .fontWeight(.medium)
+                            .foregroundColor(.white.opacity(0.8))
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 10)
+                            .background(Capsule().stroke(.white.opacity(0.8), lineWidth: 2))
+                    }
                     
                 }
                 .offset(y: -35)

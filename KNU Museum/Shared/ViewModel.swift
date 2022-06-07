@@ -16,6 +16,7 @@ class ViewModel: ObservableObject {
         model.data
     }
     
+
 }
 
 

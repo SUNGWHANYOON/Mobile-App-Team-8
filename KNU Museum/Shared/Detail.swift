@@ -10,6 +10,7 @@ import SwiftUI
 struct Detail: View {
     
     var data: ViewModel.Object
+    var english: Bool
     
     // Used to pop the top most view on the stack
     @Environment(\.presentationMode) var present
@@ -29,20 +30,25 @@ struct Detail: View {
                     
                     Spacer()
                     
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "circle.grid.2x2.fill")
+                    NavigationLink(destination: Augmented_Reality_View(obj: data).edgesIgnoringSafeArea(.all)){
+                        Image(systemName: "move.3d")
                             .font(.title)
                             .foregroundColor(.white)
                     }
 
 
                 }
-                Text("Details")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
+                if english {
+                    Text("Details")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                } else {
+                    Text("세부")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                }
             }
             .padding()
             
@@ -54,16 +60,33 @@ struct Detail: View {
                 .background(Color.white.opacity(0.2))
                 .cornerRadius(30)
             
-            Text(self.data.name)
-                .fontWeight(.bold)
-                .font(.title)
-                .foregroundColor(.white)
-                .padding(.top)
-            
-            Text(self.data.info)
-                .multilineTextAlignment(.center)
-                .foregroundColor(.white)
-                .padding(.top)
+            if english {
+                Text(self.data.ename)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .font(.title2)
+                    .foregroundColor(.white)
+                    .padding(.top)
+                
+                Text(self.data.einfo)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.white)
+                    .padding(.top)
+                
+            } else {
+                Text(self.data.name)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .padding(.top)
+                
+                Text(self.data.info)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.white)
+                    .padding(.top)
+                
+            }
             
             Spacer()
             }

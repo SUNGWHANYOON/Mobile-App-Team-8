@@ -48,29 +48,6 @@ class AIPredict{
         
         return finalResults
         
-        
-//        var finalResults: String = "-1"
-//
-//        let config = MLModelConfiguration()
-//        guard let model = try? Classifier(configuration: config) else {
-//            fatalError("Loading CoreML Model Failed.")
-//        }
-//
-//        guard let buffer = image1.convertToBuffer() else {
-//            fatalError("Converting to Buffer Failed.")
-//        }
-//
-//        print(buffer)
-//
-//        let input = ClassifierInput(image: buffer)
-//
-//        do {
-//            let output = try model.prediction(input: input)
-//            finalResults = output.classLabel
-//        } catch {
-//            fatalError(String(describing: error))
-//        }
-//        return finalResults
     }
 }
 

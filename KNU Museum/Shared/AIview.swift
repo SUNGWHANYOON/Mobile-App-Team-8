@@ -20,6 +20,7 @@ struct AIview: View {
     @State private var predictvalue: String = "1"
         
     var data : ViewModel
+    var english: Bool
   
     var body: some View {
         GeometryReader{Geometry in
@@ -38,10 +39,18 @@ struct AIview: View {
                         Spacer()
                         Spacer()
                     }
-                    Text("AI view")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
+                    if english {
+                        Text("AI Prediction")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                    } else {
+                        Text("AI 예측")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                    }
+                    
                 }
                 Image(uiImage: self.nowimage)
                     .resizable()
@@ -55,9 +64,15 @@ struct AIview: View {
                         self.Boolshowlibrary = true
                         self.boolState = true
                     }label:{
-                        Text("Upload From Gallery")
-                            .font(.title)
-                            .foregroundColor(.white.opacity(0.8))
+                        if english {
+                            Text("Upload From Gallery")
+                                .font(.title)
+                                .foregroundColor(.white.opacity(0.8))
+                        } else {
+                            Text("갤러리에서 업로드")
+                                .font(.title)
+                                .foregroundColor(.white.opacity(0.8))
+                        }
                     }
                 }
                 .padding(.horizontal)
@@ -70,21 +85,34 @@ struct AIview: View {
                         self.boolState = true
 
                     }label:{
-                        Text("Take Photo")
-                            .font(.title)
-                            .foregroundColor(.white.opacity(0.8))
+                        if english {
+                            Text("Take Photo")
+                                .font(.title)
+                                .foregroundColor(.white.opacity(0.8))
+                        } else {
+                            Text("사진을 찍다")
+                                .font(.title)
+                                .foregroundColor(.white.opacity(0.8))
+                        }
                     }
                 }
                 .padding(.horizontal)
-                if self.boolState{
+               // if self.boolState{
                     ZStack{
                         RoundedRectangle(cornerRadius: 20)
                             .fill(Color.white.opacity(0.2))
-                        NavigationLink(destination:Detail(data: self.data.objects.first(where:{$0.id == Int(predictvalue)})!)
+                        NavigationLink(destination:Detail(data: self.data.objects.first(where:{$0.id == Int(predictvalue)})!, english: self.english)
                             ,label:{
-                            Text("Predict")
-                                .font(.title)
-                                .foregroundColor(.white.opacity(0.8))
+                            if english {
+                                Text("Predict")
+                                    .font(.title)
+                                    .foregroundColor(.white.opacity(0.8))
+                            } else {
+                                Text("예측하다")
+                                    .font(.title)
+                                    .foregroundColor(.white.opacity(0.8))
+                            }
+                            
                         }).simultaneousGesture(TapGesture().onEnded{
                             
                             self.predictvalue = AIPredict(image : self.nowimage).classifyImage()
@@ -93,22 +121,6 @@ struct AIview: View {
                         
                     }
                     .padding(.horizontal)
-                }
-                ZStack{
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.white.opacity(0.2))
-                    Button{
-                        predictvalue = "1"
-                        boolState = false
-                        self.nowimage = UIImage()
-                    }label:{
-                        Text("Reset")
-                            .font(.title)
-                            .foregroundColor(.white.opacity(0.8))
-                    }
-                    
-                }
-                .padding(.horizontal)
                 
             }
             .sheet(isPresented: $Boolshowlibrary){
