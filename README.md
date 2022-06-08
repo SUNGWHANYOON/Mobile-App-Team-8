@@ -1,7 +1,7 @@
 # Mobile-App-Team-8
 
 ## User Interface Wireframe
-<img src="https://user-images.githubusercontent.com/54528672/168498593-aa332811-bb5b-4356-b0a6-9d217a6ecf01.jpeg" height="250"> <img src="https://user-images.githubusercontent.com/54528672/168498598-a6b8f291-8629-4819-83f4-d6fbbf018e82.jpeg" height="250"> <img src="https://user-images.githubusercontent.com/54528672/168498599-4982b3c2-a1ef-4d84-a3b2-71330438e15d.jpeg" height="250">
+<img src="https://user-images.githubusercontent.com/54528672/172507648-967d7ffc-1b30-4648-8b85-04db9a7e5954.jpeg" height="250"> <img src="https://user-images.githubusercontent.com/54528672/172507767-e22d17d4-6f68-45a9-bcc5-901bd15791fd.jpeg" height="250"> <img src="https://user-images.githubusercontent.com/54528672/168498599-4982b3c2-a1ef-4d84-a3b2-71330438e15d.jpeg" height="250">
 
 ## Deep Learning Model and Training using CoreML
 ### Data and Hyperparameters
