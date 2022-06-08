@@ -157,7 +157,7 @@ struct Card: View {
                             .padding(.horizontal, 10)
                             .background(Capsule().stroke(.white.opacity(0.8), lineWidth: 2))
                     } else {
-                        Text("추가 정보")
+                        Text("상세 정보")
                             .font(.callout)
                             .fontWeight(.medium)
                             .foregroundColor(.white.opacity(0.8))
