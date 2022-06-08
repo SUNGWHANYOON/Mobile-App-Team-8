@@ -15,17 +15,6 @@ struct MenuView: View {
             return GeometryReader { geometry in
                 NavigationView{
                 VStack(alignment: .leading) {
-//                    HStack{
-//                        Image(systemName: "star")
-//                        if english {
-//                            Text("Must See")
-//                        }
-//                        else {
-//                            Text("볼 수 있어야합니다")
-//                        }
-//                    }
-                    
-                    
                     Link(destination: URL(string: "https://museum.knu.ac.kr/")!){
                         Image(systemName: "house")
                         if english {
