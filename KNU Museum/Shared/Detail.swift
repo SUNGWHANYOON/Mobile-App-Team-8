@@ -44,7 +44,7 @@ struct Detail: View {
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                 } else {
-                    Text("세부")
+                    Text("유물 정보")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
