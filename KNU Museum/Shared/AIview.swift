@@ -47,7 +47,7 @@ struct AIview: View {
                             .foregroundColor(.white)
                             .padding(.vertical)
                     } else {
-                        Text("AI 예측")
+                        Text("상세 정보")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -72,7 +72,7 @@ struct AIview: View {
                                 .font(.title)
                                 .foregroundColor(.white.opacity(0.8))
                         } else {
-                            Text("갤러리에서 업로드")
+                            Text("갤러리에서 가져오기")
                                 .font(.title)
                                 .foregroundColor(.white.opacity(0.8))
                         }
@@ -93,7 +93,7 @@ struct AIview: View {
                                 .font(.title)
                                 .foregroundColor(.white.opacity(0.8))
                         } else {
-                            Text("사진을 찍다")
+                            Text("사진 찍기")
                                 .font(.title)
                                 .foregroundColor(.white.opacity(0.8))
                         }
@@ -111,7 +111,7 @@ struct AIview: View {
                                     .font(.title)
                                     .foregroundColor(.white.opacity(0.8))
                             } else {
-                                Text("예측하다")
+                                Text("예측하기")
                                     .font(.title)
                                     .foregroundColor(.white.opacity(0.8))
                             }
